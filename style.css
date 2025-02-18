@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Global Styles */
+
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+body {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background-color: rgba(255, 255, 255, 0.096);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+  height: 100px;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+
+}
+
+header img {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+}
+
+nav li {
+  position: relative;
+}
+
+nav li a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: 1.2 ease;
+}
+
+nav li a:hover,
+nav li a.active {
+  color: #ffffff;
+}
+
+nav li a.active::after,
+nav li a:hover::after {
+  content: "";
+  width: 70%;
+  height: 2px;
+  background: #ffffff;
+  position: absolute;
+  bottom: -4px;
+  left: 0px;
+}
