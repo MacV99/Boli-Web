@@ -151,6 +151,20 @@ nav li a:hover::after {
   align-items: center;
 }
 
+#title-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 21px 10%;
+  background-color: #e8edff;
+  height: 350px;
+}
+
+#title-page p {
+  text-align: justify;
+}
+
 #hero img {
   width: 100%;
   display: flex;
@@ -291,8 +305,10 @@ nav li a:hover::after {
 footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: flex-start;
   background-color: #f0f0f0;
+  gap: 35px;
 }
 
 footer img {
@@ -379,6 +395,7 @@ footer .col {
 
   header {
     padding: 21px;
+
   }
 
   header img {
@@ -396,5 +413,9 @@ footer .col {
 
   .section-p1 {
     padding: 35px;
+  }
+
+  footer {
+    justify-content: space-between;
   }
 }
