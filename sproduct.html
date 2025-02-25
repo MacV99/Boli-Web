@@ -31,34 +31,56 @@
 
   </header>
 
-  <section id="title-page">
-    <h1>Shop</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita porro officia ipsum, optio itaque asperiores
-      eligendi blanditiis qui ipsa suscipit, deserunt in amet?</p>
+  <section id="prodetails" class="section-p1">
+    <div class="single-pro-image">
+      <img src="./img/products/base-white.png" width="100%" id="MaingImg" alt="">
+      <div class="small-img-group">
+        <div class="small-img-col">
+          <img src="./img/products/base-white.png" width="100%" class="small-img" alt="">
+        </div>
+        <div class="small-img-col">
+          <img src="./img/products/base-black.png" width="100%" class="small-img" alt="">
+        </div>
+        <div class="small-img-col">
+          <img src="./img/products/base-black.png" width="100%" class="small-img" alt="">
+        </div>
+        <div class="small-img-col">
+          <img src="./img/products/base-black.png" width="100%" class="small-img" alt="">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="single-pro-details">
+      <h6>home/Boli Base</h6>
+      <h4> Boli Base</h4>
+      <h2>$12</h2>
+      <select>
+        <option>Select Color</option>
+        <option>Black</option>
+        <option>White</option>
+      </select>
+      <input type="number" value="1">
+      <button class="normal">Agregar al carrito</button>
+      <h4>detalles del producto</h4>
+      <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium reiciendis voluptates dolores qui
+        veniam. Ullam nam omnis et dolore perferendis atque dolor, repellendus, quis officia molestias voluptates
+        necessitatibus consequuntur porro.
+      </span>
+    </div>
+
+
+
   </section>
 
-
   <section id="product1" class="section-p1">
+    <h2>OTROS PRODUCTOS</h2>
+    <br>
     <div class="pro-contaienr">
-      <div class="pro" onclick="location.href='sproduct.html';">
+      <div class="pro">
         <img src="./img/products/base-white.png" alt="">
         <div class="des">
           <h5>Boli Base</h5>
-          <div class="star">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-          </div>
-          <h4>$20</h4>
-        </div>
-        <a href="#"><i class="bi bi-cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="./img/products/pega-ultra.png" alt="">
-        <div class="des">
-          <h5>Pega Flux Ultra</h5>
           <div class="star">
             <i class="bi bi-star-fill"></i>
             <i class="bi bi-star-fill"></i>
@@ -119,9 +141,6 @@
 
   </section>
 
-  <section id="pagination"></section>
-
-
   <footer class="section-p1">
     <div class="col">
       <h4>Contact</h4>
@@ -163,6 +182,23 @@
 
   </footer>
 
+  <script>
+    var $MainImg = document.getElementById('MaingImg');
+    var $smallImg = document.getElementsByClassName('small-img');
+
+    $smallImg[0].onclick = function () {
+      $MainImg.src = $smallImg[0].src;
+    }
+    $smallImg[1].onclick = function () {
+      $MainImg.src = $smallImg[1].src;
+    }
+    $smallImg[2].onclick = function () {
+      $MainImg.src = $smallImg[2].src;
+    }
+    $smallImg[3].onclick = function () {
+      $MainImg.src = $smallImg[3].src;
+    }
+  </script>
   <script src="script.js"></script>
 </body>
 
