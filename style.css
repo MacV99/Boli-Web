@@ -166,9 +166,17 @@ nav li a:hover::after {
   text-align: justify;
 }
 
+#hero {
+  display: flex;
+  justify-content: center;
+  background-color: #e8edff;
+}
+
 #hero img {
   width: 100%;
-  display: flex;
+  max-height: 700px;
+  min-height: 350px;
+  object-fit: cover;
 }
 
 #feature {
@@ -200,6 +208,9 @@ nav li a:hover::after {
 
 #product1 {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
 }
 
 #product1 .pro-contaienr {
