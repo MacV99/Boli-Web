@@ -486,6 +486,7 @@ footer .col {
   background-color: white;
   padding: 70px 35px;
   border-radius: 7px;
+  width: 90%;
   max-width: 700px;
   gap: 21px;
   position: relative
@@ -630,5 +631,6 @@ footer .col {
 
   #v-product>div {
     flex-direction: column;
+    ;
   }
 }
