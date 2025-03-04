@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./CSS/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="icon" type="image/x-icon" href="./img/logo.png">
   <title>Boliglobos Latino</title>
@@ -15,53 +15,33 @@
     <a href="#"><img src="img/logo.png" class="logo" alt=""></a>
     <div>
       <nav>
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#product1">Shop</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="cart.html"><i class="bi bi-bag"></i></a></li>
+        <!-- <li><a href="cart.html"><i class="bi bi-bag"></i></a></li> -->
         <i id="close" class="bi bi-x-lg"></i>
       </nav>
     </div>
     <div id="mobile">
-      <a href="cart.html"><i class="bi bi-bag"></i></a>
+      <!-- <a href="cart.html"><i class="bi bi-bag"></i></a>   -->
       <i id="bar" class="bi bi-list"></i>
     </div>
 
   </header>
 
   <section id="hero">
-    <img src="img/banner/Mesa de trabajo 1.jpg" alt="">
+    <img src="img/banner/Mesa de trabajo 1.jpg" alt="banner-img">
+    <img id="logo-banner" src="img/logo.png" alt="logo-banner">
   </section>
 
-  <section id="feature" class="section-p1">
-    <div class="fe-box">
-      <img src="./img/logo2.jpg" alt="">
-      <h6>Free Shipping</h6>
-    </div>
-    <div class="fe-box">
-      <img src="./img/logo2.jpg" alt="">
-      <h6>Free Shipping</h6>
-    </div>
-    <div class="fe-box">
-      <img src="./img/logo2.jpg" alt="">
-      <h6>Free Shipping</h6>
-    </div>
-    <div class="fe-box">
-      <img src="./img/logo2.jpg" alt="">
-      <h6>Free Shipping</h6>
-    </div>
-    <div class="fe-box">
-      <img src="./img/logo2.jpg" alt="">
-      <h6>Free Shipping</h6>
-    </div>
-  </section>
 
   <section id="product1" class="section-p1">
     <h2>NUESTROS PRODUCTOS</h2>
     <!-- <p>Summer Collection New Modern Design</p> -->
-    <div class="pro-contaienr">
+
+    <!-- <div class="pro-contaienr">
       <div class="pro">
         <img src="./img/products/base-white.png" alt="">
         <div class="des">
@@ -77,67 +57,38 @@
         </div>
         <a href="#"><i class="bi bi-cart"></i></a>
       </div>
-      <div class="pro">
-        <img src="./img/products/pega-ultra.png" alt="">
-        <div class="des">
-          <h5>Pega Flux Ultra</h5>
-          <div class="star">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-          </div>
-          <h4>$20</h4>
-        </div>
-        <a href="#"><i class="bi bi-cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="./img/products/pega-flux.png" alt="">
-        <div class="des">
-          <h5>Pega Flux</h5>
-          <div class="star">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-          </div>
-          <h4>$20</h4>
-        </div>
-        <a href="#"><i class="bi bi-cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="./img/products/calibrador-pink.png" alt="">
-        <div class="des">
-          <h5>Calibrador de precision</h5>
-          <div class="star">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-          </div>
-          <h4>$20</h4>
-        </div>
-        <a href="#"><i class="bi bi-cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="./img/products/brilla-flux.png" alt="">
-        <div class="des">
-          <h5>Brilla flux</h5>
-          <div class="star">
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-          </div>
-          <h4>$20</h4>
-        </div>
-        <a href="#"><i class="bi bi-cart"></i></a>
-      </div>
+      
+    </div> -->
+
+    <div id="productsContainer" class="pro-contaienr"></div>
+
+  </section>
+
+  <section id="feature" class="section-p1">
+    <div class="fe-box">
+      <img src="./img/logo2.jpg" alt="">
+      <h6>#Herramientas</h6>
     </div>
+    <div class="fe-box">
+      <img src="./img/logo2.jpg" alt="">
+      <h6>#Profesionales</h6>
+    </div>
+    <div class="fe-box">
+      <img src="./img/logo2.jpg" alt="">
+      <h6>#Globos</h6>
+    </div>
+    <div class="fe-box">
+      <img src="./img/logo2.jpg" alt="">
+      <h6>#Latex</h6>
+    </div>
+    <div class="fe-box">
+      <img src="./img/logo2.jpg" alt="">
+      <h6>#Capacitaciones</h6>
+    </div>
+  </section>
+
+  <section id="team" class="flex-column">
+    <h2>NUESTRO EQUIPO</h2>
 
   </section>
 
@@ -198,7 +149,29 @@
 
   </footer>
 
-  <script src="script.js"></script>
+
+
+
+  <!-- VISTAS -->
+  <div id="v-product" class="flex-column">
+    <div class="flex-row">
+      <i id="close-pro" class="bi bi-x-lg"></i>
+      <img src="./img/products/base-white.png" alt="">
+      <div class="flex-column">
+        <h2>PRODUCT NAME</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum at eius eveniet non! Ratione, eaque soluta
+          error autem voluptatibus odit minima, beatae necessitatibus ad vitae ut reiciendis libero enim architecto.
+        </p>
+        <div class="flex-row">
+          <h2>$20</h2>
+          <a id="btn-buy"><i class="bi bi-bag-fill"></i>COMPRAR</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./JS/script.js"></script>
 </body>
 
 </html>
