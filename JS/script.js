@@ -1,34 +1,15 @@
-// const $bar = document.getElementById('bar');
-const $nav = document.getElementsByTagName('nav')[0];
-const $closeNav = document.getElementById('close');
-const $closePro = document.getElementById('close-pro');
-const $vProduct = document.getElementById('v-product');
+let listProducts = []; // Variable global para almacenar los productos
 
-
-// CLOSE VIEW PRODUCT
-$closePro.addEventListener('click', () => {
-  $vProduct.style.display = 'none';
-})
-
-// $bar.addEventListener('click', () => {
-//   $nav.classList.add('active');
-// })
-
-$closeNav.addEventListener('click', () => {
-  $nav.classList.remove('active');
-})
-
-
-// MOSTRAR PRODUCTOS
+// Cargar productos desde JSON
 async function loadProducts() {
   try {
-    const response = await fetch('./JSON/products.json'); // Asegúrate de que el archivo JSON está en la misma ruta del HTML
-    const products = await response.json();
+    const response = await fetch('./JSON/products.json');
+    listProducts = await response.json(); // Almacenar los productos en la variable global
 
     const container = document.getElementById("productsContainer");
     container.innerHTML = '';
 
-    products.forEach(product => {
+    listProducts.forEach(product => {
       const productElement = document.createElement("div");
       productElement.classList.add("pro");
       productElement.setAttribute('id', product.id);
@@ -46,31 +27,43 @@ async function loadProducts() {
                             </div>
                             <h4>Precio: $${product.price.toFixed(3)}</h4>
                           </div>
-                          <!-- <a href="#"><i class="bi bi-cart"></i></a> -->
                     `;
+
+      productElement.addEventListener('click', () => showProductDetails(product.id)); // Evento para ver detalles
 
       container.appendChild(productElement);
     });
+
   } catch (error) {
     console.error("Error cargando los productos:", error);
   }
-
-
-  // MOSTRAR PRODUCTO 
-  let products = document.querySelectorAll('.pro');
-
-  products.forEach(product => {
-    product.addEventListener('click', () => {
-      let id = product.id
-      console.log(id);
-
-      $vProduct.style.display = 'flex';
-    })
-  });
 }
 
+// Función para mostrar los detalles del producto seleccionado
+function showProductDetails(productId) {
+  const product = listProducts.find(p => p.id == productId); // Buscar el producto en el array
+
+  if (product) {
+    const $vProduct = document.getElementById('v-product'); // Contenedor de la vista del producto
+
+    // Actualizar contenido con los detalles del producto
+    $vProduct.querySelector('img').src = product.image;
+    $vProduct.querySelector('.product-name').textContent = product.name;
+    $vProduct.querySelector('p').textContent = product.details;
+    $vProduct.querySelector('.product-price').textContent = `$${product.price.toFixed(3)}`;
+
+
+    // Mostrar la vista del producto
+    $vProduct.style.display = 'flex';
+
+    // Agregar evento para cerrar la vista
+    document.getElementById('close-pro').addEventListener('click', () => {
+      $vProduct.style.display = 'none';
+    });
+  } else {
+    console.error("Producto no encontrado");
+  }
+}
+
+// Cargar los productos al iniciar
 loadProducts();
-
-
-
-
