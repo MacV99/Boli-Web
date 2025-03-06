@@ -25,7 +25,7 @@ async function loadProducts() {
                               <i class="bi bi-star-fill"></i>
                               <i class="bi bi-star-fill"></i>
                             </div>
-                            <h4>Precio: $${product.price.toFixed(3)}</h4>
+                            <!-- <h4>Precio: $${product.price.toFixed(3)}</h4> -->
                           </div>
                     `;
 

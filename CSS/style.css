@@ -201,7 +201,7 @@ nav li a:hover::after {
 
 #hero>img:first-child {
   width: 100%;
-  max-height: 700px;
+  max-height: 400px;
   min-height: 350px;
   object-fit: cover;
   filter: opacity(0.5);
@@ -211,7 +211,7 @@ nav li a:hover::after {
 #hero img#logo-banner {
   position: absolute;
   min-width: 210px;
-  max-width: 350px;
+  max-width: 210px;
   align-self: center;
   filter: drop-shadow(0 0 14px rgba(0, 0, 0, 0.534));
 }
@@ -299,6 +299,7 @@ nav li a:hover::after {
 #product1 .pro img {
   height: 200px;
   margin-bottom: 14px;
+  padding: 14px;
 }
 
 #product1 .pro .star i {
@@ -543,6 +544,22 @@ footer .col {
 #v-product #btn-buy i {
   font-size: 21px;
   padding-right: 7px;
+}
+
+
+#path {
+  gap: 21 px;
+}
+
+
+.img-collage {
+  columns: 210px;
+}
+
+.img-collage img {
+  width: 100%;
+  margin-bottom: 7px;
+  border-radius: 7px;
 }
 
 
