@@ -546,11 +546,9 @@ footer .col {
   padding-right: 7px;
 }
 
-
 #path {
-  gap: 21 px;
+  gap: 21px;
 }
-
 
 .img-collage {
   columns: 210px;
