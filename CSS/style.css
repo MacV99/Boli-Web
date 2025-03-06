@@ -551,7 +551,7 @@ footer .col {
 }
 
 .img-collage {
-  columns: 210px;
+  columns: 210px 3;
 }
 
 .img-collage img {
