@@ -276,6 +276,7 @@ nav li a:hover::after {
   cursor: pointer;
   transition: ease 0.2s;
   position: relative;
+  background-color: rgb(255, 255, 255);
 }
 
 #product1 .pro:hover {
@@ -548,10 +549,17 @@ footer .col {
 
 #path {
   gap: 21px;
+  /* height: 500px; */
+}
+
+#path>div {
+  max-height: 500px;
+  overflow: auto;
+  border-radius: 7px;
 }
 
 .img-collage {
-  columns: 210px 3;
+  columns: 200px 4;
 }
 
 .img-collage img {
