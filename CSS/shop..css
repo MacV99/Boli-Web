@@ -22,8 +22,11 @@ svg {
 
 .icon-cart {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
+  bottom: 21px;
+  right: 21px;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
+  border-radius: 100px;
+  padding: 14px;
 }
 
 .icon-cart span {
@@ -37,7 +40,7 @@ svg {
   border-radius: 50%;
   color: #fff;
   top: 50%;
-  right: -20px;
+  right: -7px;
   padding-top: 4px;
 }
 
