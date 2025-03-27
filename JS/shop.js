@@ -1,48 +1,108 @@
-let listProductHTML = document.querySelector('.listProduct');
-let listCartHTML = document.querySelector('.listCart');
-let iconCart = document.querySelector('.icon-cart');
-let iconCartSpan = document.querySelector('.icon-cart span');
-let body = document.querySelector('body');
-let closeCart = document.querySelector('.close');
-let products = [];
-let cart = [];
+// Selección de elementos del DOM importantes para la interacción con el carrito de compras
+let listProductHTML = document.querySelector('.listProduct'); // Contenedor de la lista de productos
+let listCartHTML = document.querySelector('.listCart'); // Contenedor de la lista del carrito
+let iconCart = document.querySelector('.icon-cart'); // Ícono del carrito
+let iconCartSpan = document.querySelector('.icon-cart span'); // Elemento para mostrar la cantidad de productos
+let body = document.querySelector('body'); // Elemento body para manipular clases
+let closeCart = document.querySelector('.close'); // Botón para cerrar el carrito
+let $cleanCart = document.querySelector('.clean'); // Botón para limpiar el carrito (no utilizado actualmente)
 
-// Función para limpiar rutas de imagen
+
+
+
+// Arreglos para almacenar productos y carrito
+let products = []; // Almacena la lista de productos cargados
+let cart = []; // Almacena los productos añadidos al carrito
+
+/**
+ * Limpia y normaliza las rutas de imagen 
+ * @param {string} path - Ruta de imagen original
+ * @returns {string} Ruta de imagen limpia o cadena vacía
+ */
 const cleanImagePath = (path) => {
     return path ? path.trim() : '';
 }
 
+// Evento para mostrar/ocultar el carrito al hacer clic en el ícono del carrito
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
+
 })
+
+// Evento para cerrar el carrito
 closeCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
 })
 
+/**
+ * Renderiza los productos en el HTML
+ * Limpia el contenedor de productos y añade nuevos elementos
+ */
 const addDataToHTML = () => {
-    // Limpiar contenido existente
+    // Limpiar contenido existente del contenedor de productos
     listProductHTML.innerHTML = '';
 
-    // Añadir nuevos datos
+    // Añadir nuevos productos si existen
     if (products.length > 0) {
         products.forEach(product => {
+            // Crear elemento de producto
             let newProduct = document.createElement('div');
             newProduct.dataset.id = product.id;
             newProduct.classList.add('item', 'flex-column');
+
+            // Estructura HTML para cada producto
             newProduct.innerHTML = `
                 <img src=".${cleanImagePath(product.image)}" alt="${product.name}">
                 <h5 class="product-name">${product.name}</h5>
                 <h5>$${product.price.toFixed(3)}</h5>
                 <div class="flex-row">
                     <button class="addCart">Agregar</button>
-                    <i class="bi bi-eye"></i>
+                    <i class="bi bi-info flex-row"></i>
                 </div>
             `;
+
+            // Seleccionar el ícono de información recién creado
+            const $infoIcon = newProduct.querySelector('.bi-info');
+
+            // Añadir event listener para mostrar "hola" en consola
+            $infoIcon.addEventListener('click', () => {
+                showProductDetails(product.id);
+            });
+
             listProductHTML.appendChild(newProduct);
         });
     }
 }
 
+// Función para mostrar los detalles del producto seleccionado
+function showProductDetails(productId) {
+    const product = products.find(p => p.id == productId); // Buscar el producto en el array
+
+    if (product) {
+        const $vProduct = document.getElementById('v-product'); // Contenedor de la vista del producto
+
+        // Actualizar contenido con los detalles del producto
+        $vProduct.querySelector('img').src = `.${product.image}`;
+        $vProduct.querySelector('.product-name').textContent = product.name;
+        $vProduct.querySelector('p').textContent = product.details;
+        $vProduct.querySelector('.product-price').textContent = `$${product.price.toFixed(3)}`;
+
+
+        // Mostrar la vista del producto
+        $vProduct.style.display = 'flex';
+
+        // Agregar evento para cerrar la vista
+        document.getElementById('close-pro').addEventListener('click', () => {
+            $vProduct.style.display = 'none';
+        });
+    } else {
+        console.error("Producto no encontrado");
+    }
+}
+
+
+
+// Evento de delegación para añadir productos al carrito
 listProductHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
     if (positionClick.classList.contains('addCart')) {
@@ -51,46 +111,72 @@ listProductHTML.addEventListener('click', (event) => {
     }
 })
 
+/**
+ * Añade un producto al carrito
+ * @param {string} product_id - ID del producto a añadir
+ */
 const addToCart = (product_id) => {
+    // Buscar si el producto ya está en el carrito
     let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
+
+    // Lógica para añadir producto al carrito
     if (cart.length <= 0) {
+        // Si el carrito está vacío, añadir primer producto
         cart = [{
             product_id: product_id,
             quantity: 1
         }];
     } else if (positionThisProductInCart < 0) {
+        // Si el producto no está en el carrito, añadirlo
         cart.push({
             product_id: product_id,
             quantity: 1
         });
     } else {
+        // Si el producto ya está en el carrito, incrementar cantidad
         cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + 1;
     }
+
+    // Actualizar visualización y almacenamiento del carrito
     addCartToHTML();
     addCartToMemory();
 }
 
+/**
+ * Guarda el carrito en el almacenamiento local del navegador
+ */
 const addCartToMemory = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+/**
+ * Renderiza el carrito en el HTML
+ * Muestra productos, cantidades y calcula totales
+ */
 const addCartToHTML = () => {
     listCartHTML.innerHTML = '';
     let totalQuantity = 0;
     let totalPrice = 0;
+
     if (cart.length > 0) {
         cart.forEach(item => {
+            // Encontrar detalles del producto en la lista de productos
             let positionProduct = products.findIndex((value) => value.id == item.product_id);
+
             if (positionProduct !== -1) {
                 let info = products[positionProduct];
                 let itemTotal = info.price * item.quantity;
+
+                // Calcular totales
                 totalQuantity += item.quantity;
                 totalPrice += itemTotal;
 
+                // Crear elemento de producto en el carrito
                 let newItem = document.createElement('div');
                 newItem.classList.add('item');
                 newItem.dataset.id = item.product_id;
 
+                // Estructura HTML para elemento del carrito
                 newItem.innerHTML = `
                     <div class="image">
                         <img src=".${cleanImagePath(info.image)}" alt="${info.name}">
@@ -109,7 +195,7 @@ const addCartToHTML = () => {
             }
         });
 
-        // Opcional: Añadir total del carrito
+        // Añadir sección de total del carrito
         let totalSection = document.createElement('div');
         totalSection.classList.add('cart-total');
         totalSection.innerHTML = `
@@ -117,9 +203,12 @@ const addCartToHTML = () => {
         `;
         listCartHTML.appendChild(totalSection);
     }
+
+    // Actualizar contador de productos en el ícono del carrito
     iconCartSpan.innerText = totalQuantity;
 }
 
+// Evento de delegación para cambiar cantidad de productos en el carrito
 listCartHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
     if (positionClick.classList.contains('minus') || positionClick.classList.contains('plus')) {
@@ -129,36 +218,53 @@ listCartHTML.addEventListener('click', (event) => {
     }
 })
 
+/**
+ * Cambia la cantidad de un producto en el carrito
+ * @param {string} product_id - ID del producto
+ * @param {string} type - Tipo de cambio ('plus' o 'minus')
+ */
 const changeQuantityCart = (product_id, type) => {
     let positionItemInCart = cart.findIndex((value) => value.product_id == product_id);
+
     if (positionItemInCart >= 0) {
         switch (type) {
             case 'plus':
+                // Incrementar cantidad
                 cart[positionItemInCart].quantity++;
                 break;
             case 'minus':
+                // Decrementar cantidad
                 let changeQuantity = cart[positionItemInCart].quantity - 1;
                 if (changeQuantity > 0) {
                     cart[positionItemInCart].quantity = changeQuantity;
                 } else {
+                    // Eliminar producto si la cantidad llega a cero
                     cart.splice(positionItemInCart, 1);
                 }
                 break;
         }
     }
+
+    // Actualizar visualización y almacenamiento
     addCartToHTML();
     addCartToMemory();
 }
 
+/**
+ * Inicializa la aplicación
+ * Carga productos desde JSON y recupera carrito del almacenamiento local
+ */
 const initApp = () => {
-    // Obtener datos de productos
+    // Obtener datos de productos desde archivo JSON
     fetch('../JSON/products.json')
         .then(response => response.json())
         .then(data => {
+            // Almacenar productos cargados
             products = data;
+            // Renderizar productos
             addDataToHTML();
 
-            // Obtener datos del carrito de la memoria
+            // Recuperar carrito del almacenamiento local si existe
             if (localStorage.getItem('cart')) {
                 cart = JSON.parse(localStorage.getItem('cart'));
                 addCartToHTML();
@@ -168,4 +274,22 @@ const initApp = () => {
             console.error('Error cargando productos:', error);
         });
 }
+
+
+//CLEAN CART
+// Evento para limpiar el carrito cuando se hace clic en el botón
+$cleanCart.addEventListener('click', () => {
+    // Reiniciar el arreglo del carrito a vacío
+    cart = [];
+
+    // Actualizar visualización del carrito
+    addCartToHTML();
+
+    // Eliminar el carrito del almacenamiento local
+    localStorage.removeItem('cart');
+});
+
+
+
+// Iniciar la aplicación al cargar el script
 initApp();
