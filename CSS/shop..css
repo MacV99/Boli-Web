@@ -115,7 +115,7 @@ svg {
   top: 100px;
   right: -400px;
   bottom: 0;
-  transition: .5s;
+  transition: .5s ease-in-out;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
 }
 

@@ -503,6 +503,19 @@ footer .col {
   backdrop-filter: blur(10px);
   z-index: 20;
   color: white;
+  animation: backShadow 150ms ease-in-out;
+}
+
+@keyframes backShadow {
+  from {
+    background-color: #00000000;
+    backdrop-filter: blur(0px);
+  }
+
+  to {
+    background-color: #00000080;
+    backdrop-filter: blur(10px);
+  }
 }
 
 #v-product .bi-x-lg {
@@ -525,7 +538,7 @@ footer .col {
   position: relative;
   filter: drop-shadow(0 0 14px rgba(0, 0, 0, 0.534));
   height: 400px;
-  animation: openInfo 250ms ease-in-out;
+  animation: openInfo 150ms ease-in-out;
 }
 
 @keyframes openInfo {
