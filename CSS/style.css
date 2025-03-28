@@ -5,6 +5,9 @@
   --blue-color: #0096ff;
   --red-color: #ff0000;
   --yellow-color: #ffdc00;
+  --grey-color: #ebebeb;
+  --black-color: #222;
+  ;
 }
 
 * {
@@ -519,12 +522,17 @@ footer .col {
 }
 
 #v-product .bi-x-lg {
+  display: flex;
   position: absolute;
-  top: 21px;
-  right: 21px;
-  font-size: 28px;
+  top: 18px;
+  right: 18px;
+  font-size: 21px;
   cursor: pointer;
-  color: #0a0a0a
+  color: var(--black-color);
+  padding: 7px;
+  border-radius: 7px;
+  background-color: var(--grey-color);
+
 }
 
 #v-product>div {

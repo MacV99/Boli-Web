@@ -148,6 +148,7 @@ body.showCart .container {
   height: 70px;
   font-size: 14px;
   font-weight: 700;
+  ;
 }
 
 
@@ -195,7 +196,7 @@ body.showCart .container {
   border-radius: 21%;
   color: #222;
   cursor: pointer;
-  padding: 5px 0 0 7px;
+  padding: 6px 0 0 7px;
   font-size: 14px;
   font-weight: 500;
   background-color: rgb(216, 216, 216);
