@@ -9,7 +9,6 @@ $nextBtn.onclick = () => {
 }
 
 $prevBtn.onclick = () => {
-  console.log('hola');
   $slider.prepend($slider.querySelector('.slider-item:last-child'));
 }
 

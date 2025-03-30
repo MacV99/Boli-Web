@@ -5,10 +5,8 @@ let iconCart = document.querySelector('.icon-cart'); // Ícono del carrito
 let iconCartSpan = document.querySelector('.icon-cart span'); // Elemento para mostrar la cantidad de productos
 let body = document.querySelector('body'); // Elemento body para manipular clases
 let closeCart = document.querySelector('.close'); // Botón para cerrar el carrito
-let $cleanCart = document.querySelector('.clean'); // Botón para limpiar el carrito (no utilizado actualmente)
-
-
-
+let $cleanCart = document.querySelector('.clean'); // Botón para limpiar el carrito
+let $btnBuy = document.querySelector('.buy'); // Botón para realizar el pedido 
 
 // Arreglos para almacenar productos y carrito
 let products = []; // Almacena la lista de productos cargados
@@ -26,7 +24,6 @@ const cleanImagePath = (path) => {
 // Evento para mostrar/ocultar el carrito al hacer clic en el ícono del carrito
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
-
 })
 
 // Evento para cerrar el carrito
@@ -44,6 +41,9 @@ const addDataToHTML = () => {
 
     // Añadir nuevos productos si existen
     if (products.length > 0) {
+        // Usar fragment para mejor rendimiento
+        const fragment = document.createDocumentFragment();
+
         products.forEach(product => {
             // Crear elemento de producto
             let newProduct = document.createElement('div');
@@ -64,13 +64,15 @@ const addDataToHTML = () => {
             // Seleccionar el ícono de información recién creado
             const $infoIcon = newProduct.querySelector('.bi-info');
 
-            // Añadir event listener para mostrar "hola" en consola
+            // Añadir event listener para mostrar detalles del producto
             $infoIcon.addEventListener('click', () => {
                 showProductDetails(product.id);
             });
 
-            listProductHTML.appendChild(newProduct);
+            fragment.appendChild(newProduct);
         });
+
+        listProductHTML.appendChild(fragment);
     }
 }
 
@@ -87,20 +89,18 @@ function showProductDetails(productId) {
         $vProduct.querySelector('p').textContent = product.details;
         $vProduct.querySelector('.product-price').textContent = `$${product.price.toFixed(3)}`;
 
-
         // Mostrar la vista del producto
         $vProduct.style.display = 'flex';
 
         // Agregar evento para cerrar la vista
-        document.getElementById('close-pro').addEventListener('click', () => {
+        const closeBtn = document.getElementById('close-pro');
+        closeBtn.onclick = () => {
             $vProduct.style.display = 'none';
-        });
+        };
     } else {
         console.error("Producto no encontrado");
     }
 }
-
-
 
 // Evento de delegación para añadir productos al carrito
 listProductHTML.addEventListener('click', (event) => {
@@ -159,6 +159,9 @@ const addCartToHTML = () => {
     let totalPrice = 0;
 
     if (cart.length > 0) {
+        // Usar fragment para mejor rendimiento
+        const fragment = document.createDocumentFragment();
+
         cart.forEach(item => {
             // Encontrar detalles del producto en la lista de productos
             let positionProduct = products.findIndex((value) => value.id == item.product_id);
@@ -191,9 +194,12 @@ const addCartToHTML = () => {
                         <span class="plus">></span>
                     </div>
                 `;
-                listCartHTML.appendChild(newItem);
+
+                fragment.appendChild(newItem);
             }
         });
+
+        listCartHTML.appendChild(fragment);
 
         // Añadir sección de total del carrito
         let totalSection = document.createElement('div');
@@ -275,7 +281,6 @@ const initApp = () => {
         });
 }
 
-
 //CLEAN CART
 // Evento para limpiar el carrito cuando se hace clic en el botón
 $cleanCart.addEventListener('click', () => {
@@ -289,7 +294,20 @@ $cleanCart.addEventListener('click', () => {
     localStorage.removeItem('cart');
 });
 
+// Botón para hacer el pedido
+$btnBuy.addEventListener("click", () => {
+    let total = document.querySelector('.cart-total strong').innerText;
+    let mensaje = `Hola, quiero hacer un pedido:\n\n`;
+    cart.forEach((item) => {
+        // Usar el product_id como índice, no como valor de búsqueda
+        mensaje += `- ${products[item.product_id].name} - $${products[item.product_id].price.toFixed(3)} x ${item.quantity} = ${(products[item.product_id].price.toFixed(3) * item.quantity).toFixed(3)}\n`;
+    });
 
+    mensaje += `\n*${total}*`;
+
+    const urlWhatsApp = `https://wa.me/3172366425?text=${encodeURIComponent(mensaje)}`;
+    window.open(urlWhatsApp, "_blank");
+});
 
 // Iniciar la aplicación al cargar el script
 initApp();
