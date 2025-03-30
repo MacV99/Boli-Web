@@ -1,4 +1,17 @@
 let listProducts = []; // Variable global para almacenar los productos
+let $slider = document.querySelector('.slider'); // Contenedor del slider
+let $nextBtn = document.getElementById('next'); // Botón para avanzar al siguiente producto
+let $prevBtn = document.getElementById('prev'); // Botón para retroceder al producto anterior
+
+// SLIDER
+$nextBtn.onclick = () => {
+  $slider.append($slider.querySelector('.slider-item:first-child'));
+}
+
+$prevBtn.onclick = () => {
+  console.log('hola');
+  $slider.prepend($slider.querySelector('.slider-item:last-child'));
+}
 
 // Cargar productos desde JSON
 async function loadProducts() {
