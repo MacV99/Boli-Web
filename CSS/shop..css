@@ -247,16 +247,20 @@ body.showCart .container {
   margin-top: 7px;
 }
 
-@media only screen and (max-width: 992px) {
+@media (max-width: 799px) {
   .listProduct {
-    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    flex-direction: row;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 14px 50px;
+    gap: 70px;
+    scroll-snap-type: x mandatory;
   }
-}
 
-
-/* mobile */
-@media only screen and (max-width: 768px) {
-  .listProduct {
-    grid-template-columns: repeat(2, 1fr);
+  .listProduct .item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
   }
 }

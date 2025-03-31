@@ -5,7 +5,6 @@
   --yellow-color: #ffdc00;
   --grey-color: #ebebeb;
   --black-color: #222;
-  ;
 }
 
 * {
@@ -33,14 +32,14 @@ a {
 h1 {
   font-size: 50px;
   line-height: 64px;
-  color: #222;
+  color: var(--black-color);
   padding-top: 10px;
 }
 
 h2 {
   font-size: 46px;
   line-height: 54px;
-  color: #222;
+  color: var(--black-color);
   padding-top: 10px;
 }
 
@@ -50,19 +49,19 @@ section>h2 {
 
 h3 {
   font-size: 28px;
-  color: #222;
+  color: var(--black-color);
   padding-top: 10px;
 }
 
 h4,
 i {
   font-size: 20px;
-  color: #222;
+  color: var(--black-color);
 }
 
 h5 {
   font-size: 14px;
-  color: #222;
+  color: var(--black-color);
 }
 
 h6 {
@@ -78,6 +77,29 @@ p {
 
 .gap {
   gap: 14px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 70px;
+  background-color: rgba(255, 255, 255, 0.774);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
+  height: 100px;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+}
+
+header a {
+  display: flex;
+}
+
+header img {
+  width: 63px;
+  height: auto;
 }
 
 section,
@@ -98,10 +120,83 @@ footer {
   justify-content: center;
 }
 
+#feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px 28px;
+  flex-wrap: wrap;
+  background-image: url(../IMG/banner/Mesa\ de\ trabajo\ 2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: color;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 35px 10%;
+}
+
+#feature .fe-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 14px;
+  border-radius: 7px;
+  background-color: #00000007;
+  backdrop-filter: blur(7px);
+}
+
+#feature .fe-box h6 {
+  width: fit-content;
+  color: white;
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: 7px;
+}
+
 @media (max-width: 799px) {
+  header {
+    padding: 20px 30px;
+  }
+
+  header img {
+    width: 50px;
+  }
+
+  header nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: #ffffff;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
+    padding: 80px 0 0 14px;
+    transition: 0.3s ease;
+  }
+
+  header nav.active {
+    right: 0px;
+  }
+
+
+  header header nav li {
+    margin-bottom: 25px;
+  }
 
   h2 {
-    font-size: 28px;
+    font-size: 35px;
+    font-weight: 800;
     line-height: 42px;
+  }
+
+  #feature .fe-box h6 {
+    font-size: 14px;
   }
 }
