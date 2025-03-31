@@ -15,7 +15,7 @@ $prevBtn.onclick = () => {
 // Cargar productos desde JSON
 async function loadProducts() {
   try {
-    const response = await fetch('../JSON/products.json');
+    const response = await fetch('./JSON/products.json');
     listProducts = await response.json(); // Almacenar los productos en la variable global
 
     const container = document.getElementById("productsContainer");
@@ -27,7 +27,7 @@ async function loadProducts() {
       productElement.setAttribute('id', product.id);
 
       productElement.innerHTML = `
-                          <img src=".${product.image}" alt="${product.name}">
+                          <img src="${product.image}" alt="${product.name}">
                           <div class="des">
                             <h5>${product.name}</h5>
                             <div class="star">
