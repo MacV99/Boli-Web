@@ -43,7 +43,7 @@ async function loadProducts() {
 
       productElement.addEventListener('click', () => {
         // Redirigir a la página de detalles del producto
-        window.location.href = `./shop.html`;
+        window.location.href = `./HTML/shop.html`;
       }); // Evento para ver detalles
 
       container.appendChild(productElement);

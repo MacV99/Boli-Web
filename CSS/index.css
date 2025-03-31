@@ -351,7 +351,7 @@ footer .col {
   height: 100%;
   background-color: #00000080;
   padding: 0 10%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(7px);
   z-index: 20;
   color: white;
   animation: backShadow 150ms ease-in-out;
@@ -365,7 +365,7 @@ footer .col {
 
   to {
     background-color: #00000080;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(7px);
   }
 }
 
