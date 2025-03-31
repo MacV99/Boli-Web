@@ -37,11 +37,11 @@ h1 {
 }
 
 h2 {
-  font-size: 46px;
+  font-size: 35px;
   line-height: 54px;
   color: var(--black-color);
   padding-top: 10px;
-  font-weight: 700;
+  font-weight: 00;
 }
 
 section>h2 {
@@ -105,7 +105,7 @@ header img {
 
 section,
 footer {
-  padding: 35px 10%;
+  padding: 45px 10%;
 }
 
 .flex-column {
