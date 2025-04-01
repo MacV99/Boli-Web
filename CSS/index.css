@@ -498,16 +498,6 @@ footer .col {
   height: fit-content;
 }
 
-#hero h2 {
-  position: absolute;
-  align-self: center;
-  margin: 0;
-  padding: 31px 35px 21px;
-  background-color: #ffffff4f;
-  backdrop-filter: blur(7px);
-  border-radius: 14px;
-}
-
 .carousel-track {
   display: flex;
   width: 1;
