@@ -547,7 +547,7 @@ footer .col {
   border-radius: 28px;
 }
 
-.slider-item video {
+.slider-item iframe {
   max-width: 300px;
   height: 100%;
   object-fit: cover;
@@ -682,7 +682,7 @@ footer .col {
     padding: 14px 0px;
   }
 
-  #testimonials .slider-item video {
+  #testimonials .slider-item iframe {
     width: 100%;
     height: auto;
     border-radius: 14px;
