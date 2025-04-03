@@ -476,8 +476,8 @@ footer .col {
 
 #path img {
   flex: 0 0 auto;
-  width: 320px;
-  height: 320px;
+  width: 310px;
+  height: 310px;
   border-radius: 14px;
   scroll-snap-align: center;
   object-fit: cover;
