@@ -56,7 +56,6 @@ async function loadProducts() {
 
 
 // INFINITY SLIDER
-
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('carouselTrack');
   const images = Array.from(track.children);
@@ -94,6 +93,65 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cambiar imagen cada 3 segundos
   setInterval(moveCarousel, 7000);
 });
+
+// TRAYECTORIA
+// Cargar las imágenes de trayectoria desde el JSON
+fetch('./JSON/trayectoria.json')
+  .then(response => response.json())
+  .then(trayectoriaData => {
+    const container = document.querySelector("#path > div");
+    container.innerHTML = "";
+
+    for (const [year, images] of Object.entries(trayectoriaData)) {
+      const imageHTML = images.map(imgSrc => `
+        <img src="${imgSrc}" alt="Imagen de ${year}" class="trayectoria-img" loading="lazy">
+      `).join("");
+
+      const yearBlock = `
+        <div class="flex-row">
+          <h4 class="year">${year}</h4>
+          <div class="flex-row">
+            ${imageHTML}
+          </div>
+        </div>
+      `;
+
+      container.innerHTML += yearBlock;
+    }
+
+    // Esperar a que las imágenes estén en el DOM
+    setTimeout(() => {
+      const images = document.querySelectorAll(".trayectoria-img");
+      const modal = document.getElementById("image-modal");
+      const modalImg = document.getElementById("modal-img");
+
+      images.forEach(img => {
+        img.addEventListener("click", () => {
+          modalImg.src = img.src;
+          modal.classList.remove("hidden");
+        });
+      });
+
+      // Cerrar modal al hacer clic fuera de la imagen
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.add("hidden");
+        }
+      });
+
+      // Cerrar modal con tecla Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          modal.classList.add("hidden");
+        }
+      });
+    }, 100);
+  })
+  .catch(error => console.error("Error al cargar las imágenes de trayectoria:", error));
+
+
+
+
 
 
 // Cargar los productos al iniciar
