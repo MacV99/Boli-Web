@@ -51,7 +51,6 @@ nav li a {
   font-size: 16px;
   font-weight: 600;
   color: #3a3a3a;
-  transition: 1.2 ease;
 }
 
 nav li a:hover,
@@ -121,6 +120,16 @@ nav li a:hover::after {
   gap: 21px;
 }
 
+#productsContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 #product1 .pro {
   display: flex;
   align-items: center;
@@ -135,6 +144,7 @@ nav li a:hover::after {
   transition: ease 0.2s;
   position: relative;
   background-color: rgb(255, 255, 255);
+  flex: 0 0 auto;
 }
 
 #product1 .pro:hover {
@@ -512,7 +522,7 @@ footer .col {
 }
 
 
-/* INFINITY SLIDER */
+/* INFINITY SLIDER HERO*/
 
 .carousel-container {
   display: flex;
@@ -527,7 +537,6 @@ footer .col {
 
 .carousel-track {
   display: flex;
-  width: 1;
   transition: transform 0.5s ease;
 }
 
@@ -610,6 +619,8 @@ footer .col {
 }
 
 
+
+
 @media (max-width: 799px) {
   #mobile {
     display: flex;
@@ -633,20 +644,6 @@ footer .col {
 
   footer {
     justify-content: space-between;
-  }
-
-  #prodetails {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #prodetails .single-pro-image {
-    width: 100%;
-    margin-right: 0px;
-  }
-
-  #prodetails .single-pro-details {
-    width: 100%;
   }
 
   #blog {
@@ -719,22 +716,21 @@ footer .col {
     overflow-y: auto;
   }
 
+  #product1 .pro {
+    scroll-snap-align: center;
+  }
+
   #product1 .pro-container {
     display: flex;
     align-items: center;
     width: 100%;
     flex-direction: row;
-    overflow-x: scroll;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    padding: 14px 50px;
     gap: 70px;
+    overflow-x: auto;
+    padding: 14px 50px;
     scroll-snap-type: x mandatory;
-  }
-
-  #product1 .pro {
-    flex: 0 0 auto;
-    scroll-snap-align: center;
   }
 
   #path>div {
