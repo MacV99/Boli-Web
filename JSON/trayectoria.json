@@ -1,14 +1,94 @@
 {
-  "2010": [
-    "./IMG/trayectoria/2010/1.jpg",
-    "./IMG/trayectoria/2010/2.jpg"
-  ],
   "2011": [
     "./IMG/trayectoria/2011/1.jpg",
-    "./IMG/trayectoria/2011/2.jpg"
+    "./IMG/trayectoria/2011/2.jpg",
+    "./IMG/trayectoria/2011/3.jpg",
+    "./IMG/trayectoria/2011/4.jpg",
+    "./IMG/trayectoria/2011/5.jpg",
+    "./IMG/trayectoria/2011/6.jpg"
   ],
-  "2012": [
-    "./IMG/trayectoria/2011/1.jpg",
-    "./IMG/trayectoria/2011/2.jpg"
+  "2013": [
+    "./IMG/trayectoria/2013/1.jpg",
+    "./IMG/trayectoria/2013/2.jpg",
+    "./IMG/trayectoria/2013/3.jpg",
+    "./IMG/trayectoria/2013/4.jpg",
+    "./IMG/trayectoria/2013/5.jpg",
+    "./IMG/trayectoria/2013/6.jpg",
+    "./IMG/trayectoria/2013/7.jpg",
+    "./IMG/trayectoria/2013/8.jpg"
+  ],
+  "2014": [
+    "./IMG/trayectoria/2014/1.jpg",
+    "./IMG/trayectoria/2014/2.jpg",
+    "./IMG/trayectoria/2014/3.jpg",
+    "./IMG/trayectoria/2014/4.jpg",
+    "./IMG/trayectoria/2014/5.jpg",
+    "./IMG/trayectoria/2014/6.jpg",
+    "./IMG/trayectoria/2014/7.jpg",
+    "./IMG/trayectoria/2014/8.jpg"
+  ],
+  "2015": [
+    "./IMG/trayectoria/2015/1.jpg",
+    "./IMG/trayectoria/2015/2.jpg",
+    "./IMG/trayectoria/2015/3.jpg",
+    "./IMG/trayectoria/2015/4.jpg",
+    "./IMG/trayectoria/2015/5.jpg",
+    "./IMG/trayectoria/2015/6.jpg",
+    "./IMG/trayectoria/2015/7.jpg",
+    "./IMG/trayectoria/2015/8.jpg",
+    "./IMG/trayectoria/2015/9.jpg",
+    "./IMG/trayectoria/2015/10.jpg"
+  ],
+  "2017": [
+    "./IMG/trayectoria/2017/1.jpg",
+    "./IMG/trayectoria/2017/2.jpg",
+    "./IMG/trayectoria/2017/3.jpg",
+    "./IMG/trayectoria/2017/4.jpg",
+    "./IMG/trayectoria/2017/5.jpg",
+    "./IMG/trayectoria/2017/6.jpg"
+  ],
+  "2019": [
+    "./IMG/trayectoria/2019/1.jpg",
+    "./IMG/trayectoria/2019/2.jpg",
+    "./IMG/trayectoria/2019/3.jpg"
+  ],
+  "2020": [
+    "./IMG/trayectoria/2020/1.jpg",
+    "./IMG/trayectoria/2020/2.jpg",
+    "./IMG/trayectoria/2020/3.jpg",
+    "./IMG/trayectoria/2020/4.jpg",
+    "./IMG/trayectoria/2020/5.jpg"
+  ],
+  "2021": [
+    "./IMG/trayectoria/2021/1.jpg",
+    "./IMG/trayectoria/2021/2.jpg",
+    "./IMG/trayectoria/2021/3.jpg",
+    "./IMG/trayectoria/2021/4.jpg",
+    "./IMG/trayectoria/2021/5.jpg",
+    "./IMG/trayectoria/2021/6.jpg"
+  ],
+  "2022": [
+    "./IMG/trayectoria/2022/1.jpg",
+    "./IMG/trayectoria/2022/2.jpg",
+    "./IMG/trayectoria/2022/3.jpg",
+    "./IMG/trayectoria/2022/4.jpg",
+    "./IMG/trayectoria/2022/5.jpg",
+    "./IMG/trayectoria/2022/6.jpg"
+  ],
+  "2023": [
+    "./IMG/trayectoria/2023/1.jpg",
+    "./IMG/trayectoria/2023/2.jpg",
+    "./IMG/trayectoria/2023/3.jpg",
+    "./IMG/trayectoria/2023/4.jpg",
+    "./IMG/trayectoria/2023/5.jpg",
+    "./IMG/trayectoria/2023/6.jpg"
+  ],
+  "2024": [
+    "./IMG/trayectoria/2024/1.jpg",
+    "./IMG/trayectoria/2024/2.jpg"
+  ],
+  "2025": [
+    "./IMG/trayectoria/2025/1.jpg",
+    "./IMG/trayectoria/2025/2.jpg"
   ]
 }
