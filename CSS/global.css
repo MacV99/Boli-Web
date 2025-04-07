@@ -103,6 +103,50 @@ header img {
   height: auto;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+}
+
+nav li {
+  position: relative;
+}
+
+nav li a {
+  font-size: 16px;
+  font-weight: 450;
+  color: #3a3a3a;
+}
+
+nav li a:hover,
+nav li a.active {
+  color: #0a0a0a;
+}
+
+nav li a.active::after,
+nav li a:hover::after {
+  content: "";
+  width: 70%;
+  height: 2px;
+  background: #0a0a0a;
+  position: absolute;
+  bottom: -4px;
+  left: 0px;
+}
+
+#mobile {
+  display: none;
+  align-items: center;
+}
+
+#mobile li a {
+  font-size: 14px;
+  color: var(--black-color);
+  cursor: pointer;
+}
+
 section,
 footer {
   padding: 45px 10%;
@@ -130,6 +174,17 @@ footer {
   background-color: #ffffff4f;
   backdrop-filter: blur(7px);
   border-radius: 14px;
+}
+
+#title {
+  background-color: #f0f9ff;
+}
+
+#title h2 {
+  letter-spacing: 7px;
+  font-weight: 350;
+  width: fit-content;
+  border-bottom: solid 1px var(--black-color);
 }
 
 .feature {
@@ -174,6 +229,68 @@ footer {
   font-size: 14px;
   content: 'Porque nuestros corazones son de látex';
   text-transform: uppercase;
+}
+
+/* KEYRFAMES */
+
+@keyframes nudge-x {
+  0% {
+    transform: translateX(0);
+  }
+
+  4% {
+    transform: translateX(-70px);
+  }
+
+  8% {
+    transform: translateX(14px);
+  }
+
+  12% {
+    transform: translateX(-14px);
+  }
+
+  16% {
+    transform: translateX(7px);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes nudge-y {
+  0% {
+    transform: translateY(0);
+  }
+
+  4% {
+    transform: translateY(-70px);
+  }
+
+  8% {
+    transform: translateY(14px);
+  }
+
+  12% {
+    transform: translateY(-14px);
+  }
+
+  16% {
+    transform: translateY(7px);
+  }
+
+  20% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 799px) {

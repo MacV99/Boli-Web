@@ -147,8 +147,7 @@ body.showCart .container {
   width: 50%;
   height: 70px;
   font-size: 14px;
-  font-weight: 700;
-  ;
+  font-weight: 450;
 }
 
 
@@ -255,12 +254,13 @@ body.showCart .container {
     flex-wrap: nowrap;
     justify-content: flex-start;
     padding: 14px 50px;
-    gap: 70px;
+    gap: 21 px;
     scroll-snap-type: x mandatory;
   }
 
   .listProduct .item {
     flex: 0 0 auto;
     scroll-snap-align: center;
+    animation: nudge-x 7s ease-in-out infinite;
   }
 }

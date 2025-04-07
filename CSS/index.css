@@ -36,43 +36,7 @@ button.white {
   transition: 0.2s ease;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 70px;
-}
 
-nav li {
-  position: relative;
-}
-
-nav li a {
-  font-size: 16px;
-  font-weight: 600;
-  color: #3a3a3a;
-}
-
-nav li a:hover,
-nav li a.active {
-  color: #0a0a0a;
-}
-
-nav li a.active::after,
-nav li a:hover::after {
-  content: "";
-  width: 70%;
-  height: 2px;
-  background: #0a0a0a;
-  position: absolute;
-  bottom: -4px;
-  left: 0px;
-}
-
-#mobile {
-  display: none;
-  align-items: center;
-}
 
 #title-page {
   display: flex;
@@ -468,6 +432,7 @@ footer .col {
   gap: 14px;
   justify-content: flex-start;
   scroll-snap-align: center;
+  animation: nudge-y 14s ease-in-out 3s infinite;
 }
 
 #path>div>div h4 {
@@ -491,6 +456,7 @@ footer .col {
   border-radius: 14px;
   scroll-snap-align: center;
   object-fit: cover;
+  animation: nudge-x 7s ease-in-out infinite;
 }
 
 /* MODAL DE IMAGEN TRAYECTORIA */
@@ -718,6 +684,7 @@ footer .col {
 
   #product1 .pro {
     scroll-snap-align: center;
+    animation: nudge-x 7s ease-in-out infinite;
   }
 
   #product1 .pro-container {
@@ -727,7 +694,7 @@ footer .col {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    gap: 70px;
+    gap: 21px;
     overflow-x: auto;
     padding: 14px 50px;
     scroll-snap-type: x mandatory;
