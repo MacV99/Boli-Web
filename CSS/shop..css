@@ -246,6 +246,10 @@ body.showCart .container {
   margin-top: 7px;
 }
 
+#products .bi-arrows {
+  display: none;
+}
+
 @media (max-width: 799px) {
   .listProduct {
     width: 100%;

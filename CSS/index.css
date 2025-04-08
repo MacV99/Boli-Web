@@ -84,6 +84,10 @@ button.white {
   gap: 7px;
 }
 
+#product1 .bi-arrows {
+  display: none;
+}
+
 #productsContainer {
   display: flex;
   align-items: center;
@@ -417,6 +421,11 @@ footer .col {
   /* height: 500px; */
 }
 
+#path .bi-arrows {
+  animation: bounce-x-y 6s ease-in-out infinite;
+  font-size: 28px;
+}
+
 #path>div {
   height: 340px;
   width: 100%;
@@ -709,12 +718,6 @@ footer .col {
 
   #path>div {
     height: 360px;
-  }
-
-  #path .bi-arrows {
-    animation: bounce-x-y 6s ease-in-out infinite;
-    font-size: 28px;
-
   }
 
   #path>div>div {
