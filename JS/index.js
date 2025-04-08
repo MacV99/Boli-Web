@@ -104,7 +104,7 @@ fetch('./JSON/trayectoria.json')
 
     for (const [year, images] of Object.entries(trayectoriaData)) {
       const imageHTML = images.map(imgSrc => `
-        <img src="${imgSrc}" alt="Imagen de ${year}" class="trayectoria-img" loading="lazy">
+        <img src="${imgSrc}" alt="Imagen de ${year}" class="trayectoria-img">
       `).join("");
 
       const yearBlock = `
