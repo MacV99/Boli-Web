@@ -263,4 +263,13 @@ body.showCart .container {
     scroll-snap-align: center;
     animation: nudge-x 7s ease-in-out infinite;
   }
+
+  #products .bi-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    animation: bounce-x 3s ease-in-out infinite;
+    color: var(--black-color);
+  }
 }
