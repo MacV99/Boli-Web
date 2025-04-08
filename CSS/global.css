@@ -233,59 +233,72 @@ footer {
 
 /* KEYRFAMES */
 
-@keyframes nudge-x {
+
+@keyframes bounce-x-y {
   0% {
-    scroll-snap-align: none;
-    transform: translateX(0);
+    transform: translateX(0) rotate(0deg);
   }
 
-  4% {
-    transform: translateX(-70px);
-  }
-
-  8% {
-    transform: translateX(0px);
+  10% {
+    transform: translateX(-14px) rotate(0deg);
   }
 
   20% {
-    transform: translateX(0);
-    scroll-snap-align: center;
+    transform: translateX(0) rotate(0deg);
+  }
+
+  30% {
+    transform: translateX(14px) rotate(0deg);
+  }
+
+  40% {
+    transform: translateX(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateX(0) rotate(90deg);
+  }
+
+  60% {
+    transform: translateY(-7px) rotate(90deg);
+  }
+
+  70% {
+    transform: translateY(0) rotate(90deg);
+  }
+
+  80% {
+    transform: translateY(7px) rotate(90deg);
+  }
+
+  90% {
+    transform: translateY(0) rotate(90deg);
   }
 
   100% {
-    transform: translateX(0);
+    transform: translateY(0) rotate(0deg);
   }
 }
 
-@keyframes nudge-y {
+@keyframes bounce-x {
   0% {
-    scroll-snap-align: none;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
-  4% {
-    transform: translateY(-70px);
+  25% {
+    transform: translateX(-14px);
   }
 
-  8% {
-    transform: translateY(14px);
+  50% {
+    transform: translateX(0);
   }
 
-  12% {
-    transform: translateY(-14px);
-  }
-
-  16% {
-    transform: translateY(7px);
-  }
-
-  20% {
-    transform: translateY(0);
-    scroll-snap-align: center;
+  75% {
+    transform: translateX(14px);
   }
 
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 

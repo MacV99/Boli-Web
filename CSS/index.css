@@ -81,7 +81,7 @@ button.white {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 21px;
+  gap: 7px;
 }
 
 #productsContainer {
@@ -455,7 +455,6 @@ footer .col {
   border-radius: 14px;
   scroll-snap-align: center;
   object-fit: cover;
-  animation: nudge-x 10s ease-in-out infinite;
 }
 
 /* MODAL DE IMAGEN TRAYECTORIA */
@@ -681,9 +680,18 @@ footer .col {
     overflow-y: auto;
   }
 
+  #product1 .bi-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    animation: bounce-x 3s ease-in-out infinite;
+    color: var(--black-color);
+  }
+
   #product1 .pro {
     scroll-snap-align: center;
-    animation: nudge-x 10s ease-in-out infinite;
+    /* animation: nudge-x 10s ease-in-out infinite; */
   }
 
   #product1 .pro-container {
@@ -701,6 +709,12 @@ footer .col {
 
   #path>div {
     height: 360px;
+  }
+
+  #path .bi-arrows {
+    animation: bounce-x-y 6s ease-in-out infinite;
+    font-size: 28px;
+
   }
 
   #path>div>div {
