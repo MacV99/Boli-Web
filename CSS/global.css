@@ -235,6 +235,7 @@ footer {
 
 @keyframes nudge-x {
   0% {
+    scroll-snap-align: none;
     transform: translateX(0);
   }
 
@@ -243,19 +244,12 @@ footer {
   }
 
   8% {
-    transform: translateX(14px);
-  }
-
-  12% {
-    transform: translateX(-14px);
-  }
-
-  16% {
-    transform: translateX(7px);
+    transform: translateX(0px);
   }
 
   20% {
     transform: translateX(0);
+    scroll-snap-align: center;
   }
 
   100% {
@@ -265,6 +259,7 @@ footer {
 
 @keyframes nudge-y {
   0% {
+    scroll-snap-align: none;
     transform: translateY(0);
   }
 
@@ -286,6 +281,7 @@ footer {
 
   20% {
     transform: translateY(0);
+    scroll-snap-align: center;
   }
 
   100% {

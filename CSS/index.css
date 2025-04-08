@@ -87,10 +87,10 @@ button.white {
 #productsContainer {
   display: flex;
   align-items: center;
-  width: 100%;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  width: 100%;
   gap: 20px;
 }
 
@@ -423,7 +423,7 @@ footer .col {
   overflow-y: auto;
   justify-content: start;
   gap: 28px;
-  padding: 14px 0;
+  /* padding: 14px 0; */
   scroll-snap-type: y mandatory;
 }
 
@@ -432,7 +432,6 @@ footer .col {
   gap: 14px;
   justify-content: flex-start;
   scroll-snap-align: center;
-  animation: nudge-y 14s ease-in-out 3s infinite;
 }
 
 #path>div>div h4 {
@@ -445,8 +444,8 @@ footer .col {
   justify-content: flex-start;
   width: fit-content;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   padding: 0 14px;
+  scroll-snap-type: x mandatory;
 }
 
 #path img {
@@ -456,7 +455,7 @@ footer .col {
   border-radius: 14px;
   scroll-snap-align: center;
   object-fit: cover;
-  animation: nudge-x 7s ease-in-out infinite;
+  animation: nudge-x 10s ease-in-out infinite;
 }
 
 /* MODAL DE IMAGEN TRAYECTORIA */
@@ -684,18 +683,18 @@ footer .col {
 
   #product1 .pro {
     scroll-snap-align: center;
-    animation: nudge-x 7s ease-in-out infinite;
+    animation: nudge-x 10s ease-in-out infinite;
   }
 
   #product1 .pro-container {
     display: flex;
     align-items: center;
-    width: 100%;
+    overflow-x: auto;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     gap: 21px;
-    overflow-x: auto;
+    width: 100%;
     padding: 14px 50px;
     scroll-snap-type: x mandatory;
   }
@@ -719,5 +718,6 @@ footer .col {
     max-width: 90%;
     height: auto;
     max-height: 90%;
+
   }
 }
