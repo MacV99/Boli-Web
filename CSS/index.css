@@ -693,7 +693,7 @@ footer .col {
 
 
   #product1 .bi-arrows {
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 28px;
