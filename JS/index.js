@@ -23,7 +23,7 @@ async function loadProducts() {
 
     listProducts.forEach(product => {
       const productElement = document.createElement("div");
-      productElement.classList.add("pro");
+      productElement.classList.add("pro", "flex-column");
       productElement.setAttribute('id', product.id);
 
       productElement.innerHTML = `
