@@ -3,6 +3,8 @@ let $slider = document.querySelector('.slider'); // Contenedor del slider
 let $nextBtn = document.getElementById('next'); // Botón para avanzar al siguiente producto
 let $prevBtn = document.getElementById('prev'); // Botón para retroceder al producto anterior
 
+
+
 // SLIDER
 $nextBtn.onclick = () => {
   $slider.append($slider.querySelector('.slider-item:first-child'));
@@ -11,6 +13,7 @@ $nextBtn.onclick = () => {
 $prevBtn.onclick = () => {
   $slider.prepend($slider.querySelector('.slider-item:last-child'));
 }
+
 
 // Cargar productos desde JSON
 async function loadProducts() {
@@ -94,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(moveCarousel, 7000);
 });
 
+
 // TRAYECTORIA
 // Cargar las imágenes de trayectoria desde el JSON
 fetch('./JSON/trayectoria.json')
@@ -148,10 +152,6 @@ fetch('./JSON/trayectoria.json')
     }, 100);
   })
   .catch(error => console.error("Error al cargar las imágenes de trayectoria:", error));
-
-
-
-
 
 
 // Cargar los productos al iniciar
