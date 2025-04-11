@@ -215,22 +215,22 @@ const addCartToHTML = () => {
 
                 // Crear elemento de producto en el carrito
                 let newItem = document.createElement('div');
-                newItem.classList.add('item');
+                newItem.classList.add('item', 'flex-row');
                 newItem.dataset.id = item.product_id;
 
                 // Estructura HTML para elemento del carrito
                 newItem.innerHTML = `
-                    <div class="image">
+                    <div class="image flex-column">
                         <img src=".${cleanImagePath(info.image)}" alt="${info.name}">
                     </div>
                     <div class="name">
                         ${info.name}
                     </div>
                     <div class="totalPrice">$${itemTotal.toFixed(3)}</div>
-                    <div class="quantity">
-                        <span class="minus">-</span>
+                    <div class="quantity flex-row">
+                        <span><i class="bi bi-dash minus"></i></span>
                         <span>${item.quantity}</span>
-                        <span class="plus">+</span>
+                        <span><i class="bi bi-plus plus"></i></span>
                     </div>
                 `;
 

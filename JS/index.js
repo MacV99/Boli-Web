@@ -28,7 +28,7 @@ async function loadProducts() {
 
       productElement.innerHTML = `
                           <img src="${product.image}" alt="${product.name}">
-                          <div class="des">
+                          <div class="des flex-column">
                             <h5>${product.name}</h5>
                             <div class="star">
                               <i class="bi bi-star-fill"></i>
