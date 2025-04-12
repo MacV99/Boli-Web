@@ -371,6 +371,12 @@ button.white {
   height: 300px;
   max-width: 900px;
   align-items: flex-start;
+  gap: 14px;
+  height: auto;
+}
+
+#testimonials .slider-item>div {
+  gap: 7px;
 }
 
 #testimonials .slider-item iframe {
