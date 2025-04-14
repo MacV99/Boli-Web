@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   createInfiniteCarousel();
 
   // Cambiar imagen cada 3 segundos
-  setInterval(moveCarousel, 7000);
+  setInterval(moveCarousel, 3000);
 });
 
 
