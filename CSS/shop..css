@@ -257,4 +257,29 @@ body.showCart .container {
     animation: bounce-x 3s ease-in-out infinite;
     color: var(--black-color);
   }
+
+  #products {
+    position: relative;
+  }
+
+
+
+  .listProduct div.arrows {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 5;
+    padding: 0 35px;
+  }
+
+  .listProduct div.arrows .bi {
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 28px;
+  }
 }

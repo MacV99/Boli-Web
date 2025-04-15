@@ -22,14 +22,19 @@ async function loadProducts() {
     listProducts = await response.json(); // Almacenar los productos en la variable global
 
     const container = document.getElementById("productsContainer");
-    container.innerHTML = '';
+    container.innerHTML = `
+                            <div class="arrows flex-row">
+                              <i class="bi bi-arrow-left-circle-fill flex-row"></i>
+                              <i class="bi bi-arrow-right-circle-fill flex-row"></i>
+                            </div>
+                          `;
 
     listProducts.forEach(product => {
       const productElement = document.createElement("div");
       productElement.classList.add("pro", "flex-column");
       productElement.setAttribute('id', product.id);
 
-      productElement.innerHTML = `
+      productElement.innerHTML = `                          
                           <img src="${product.image}" alt="${product.name}">
                           <div class="des flex-column">
                             <h5>${product.name}</h5>
@@ -104,9 +109,16 @@ fetch('./JSON/trayectoria.json')
   .then(response => response.json())
   .then(trayectoriaData => {
     const container = document.querySelector("#path > div");
-    container.innerHTML = "";
+    container.innerHTML = `
+                            <div class="arrows flex-row">
+                              <i class="bi bi-arrow-left-circle-fill flex-row"></i>
+                              <i class="bi bi-arrow-right-circle-fill flex-row"></i>
+                            </div>`;
 
-    for (const [year, images] of Object.entries(trayectoriaData)) {
+
+    const sortedEntries = Object.entries(trayectoriaData).sort(([a], [b]) => b - a);
+    for (const [year, images] of sortedEntries) {
+
       const imageHTML = images.map(imgSrc => `
         <img src="${imgSrc}" alt="Imagen de ${year}" class="trayectoria-img">
       `).join("");

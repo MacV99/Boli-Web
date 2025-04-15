@@ -61,11 +61,13 @@ button.white {
   filter: drop-shadow(0 0 14px rgba(0, 0, 0, 0.534));
 }
 
+
 #product1 {
   gap: 7px;
 }
 
-#product1 .bi-arrows {
+#product1 .bi-arrows,
+#product1 div.arrows {
   display: none;
 }
 
@@ -494,10 +496,15 @@ button.white {
     font-size: 28px;
     animation: bounce-x 3s ease-in-out infinite;
     color: var(--black-color);
+
   }
 
   #product1 .pro {
     scroll-snap-align: center;
+  }
+
+  #product1 {
+    position: relative;
   }
 
   #product1 .pro-container {
@@ -510,8 +517,31 @@ button.white {
     scroll-snap-type: x mandatory;
   }
 
+  #product1 div.arrows {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 5;
+    padding: 0 35px;
+  }
+
+  #product1 div.arrows .bi {
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 28px;
+  }
+
+
   #path>div {
     height: 360px;
+  }
+
+  #path {
+    position: relative;
   }
 
   #path>div>div {
@@ -524,11 +554,37 @@ button.white {
     width: 100%;
   }
 
-  .modal img {
+  #path .modal img {
     width: auto;
     max-width: 90%;
     height: auto;
     max-height: 90%;
-
   }
+
+  #path div.arrows {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 50%;
+    top: 56%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 5;
+    padding: 0 7px;
+  }
+
+  #path div.arrows .bi,
+  #path .bi-arrow-down-circle-fill {
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 28px;
+  }
+
+  #path .bi-arrow-down-circle-fill {
+    position: relative;
+    top: -9px;
+  }
+
 }
