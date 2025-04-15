@@ -9,7 +9,7 @@
   ],
   "2013": [
     "./IMG/trayectoria/2013/2.jpg",
-    "./IMG/trayectoria/2013/8.jpg",
+    "./IMG/trayectoria/2013/7.jpg",
     "./IMG/trayectoria/2013/1.jpg",
     "./IMG/trayectoria/2013/4.jpg",
     "./IMG/trayectoria/2013/3.jpg",
@@ -35,10 +35,30 @@
     "./IMG/trayectoria/2015/8.jpg"
   ],
   "2017": [
+    "./IMG/trayectoria/2017/1.jpg",
+    "./IMG/trayectoria/2017/2.jpg",   
+    "./IMG/trayectoria/2017/3.jpg",
+    "./IMG/trayectoria/2017/4.jpg",
+    "./IMG/trayectoria/2017/5.jpg",
+    "./IMG/trayectoria/2017/6.jpg",
+    "./IMG/trayectoria/2017/7.jpg",
+    "./IMG/trayectoria/2017/8.jpg",
+    "./IMG/trayectoria/2017/9.jpg"
     
   ],
   "2018": [
-    
+    "./IMG/trayectoria/2018/1.jpg",
+    "./IMG/trayectoria/2018/2.jpg",   
+    "./IMG/trayectoria/2018/3.jpg",
+    "./IMG/trayectoria/2018/4.jpg",
+    "./IMG/trayectoria/2018/5.jpg",
+    "./IMG/trayectoria/2018/6.jpg",
+    "./IMG/trayectoria/2018/7.jpg",
+    "./IMG/trayectoria/2018/8.jpg",
+    "./IMG/trayectoria/2018/9.jpg",
+    "./IMG/trayectoria/2018/10.jpg",
+    "./IMG/trayectoria/2018/11.jpg",
+    "./IMG/trayectoria/2018/12.jpg"
   ],
   "2019": [
     "./IMG/trayectoria/2019/1.jpg",
@@ -66,7 +86,10 @@
     "./IMG/trayectoria/2022/3.jpg",
     "./IMG/trayectoria/2022/4.jpg",
     "./IMG/trayectoria/2022/5.jpg",
-    "./IMG/trayectoria/2022/6.jpg"
+    "./IMG/trayectoria/2022/6.jpg",
+    "./IMG/trayectoria/2022/7.jpg",
+    "./IMG/trayectoria/2022/8.jpg",
+    "./IMG/trayectoria/2022/9.jpg"
   ],
   "2023": [
     "./IMG/trayectoria/2023/1.jpg",
@@ -88,6 +111,10 @@
     "./IMG/trayectoria/2024/2.jpg"
   ],  
   "2025": [
-    "./IMG/trayectoria/2025/1.jpg"
+    "./IMG/trayectoria/2025/1.jpg",
+    "./IMG/trayectoria/2025/2.jpg",
+    "./IMG/trayectoria/2025/3.jpg",
+    "./IMG/trayectoria/2025/4.jpg",
+    "./IMG/trayectoria/2025/5.jpg"
   ]
 }

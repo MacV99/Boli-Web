@@ -67,7 +67,9 @@ button.white {
 }
 
 #product1 .bi-arrows,
-#product1 div.arrows {
+#product1 div.arrows,
+.bi-arrow-down-circle-fill,
+div.arrows {
   display: none;
 }
 
@@ -583,6 +585,7 @@ button.white {
   }
 
   #path .bi-arrow-down-circle-fill {
+    display: flex;
     position: relative;
     top: -9px;
   }

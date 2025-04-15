@@ -227,8 +227,8 @@ body.showCart .container {
 }
 
 
-
-#products .bi-arrows {
+#products .bi-arrows,
+.listProduct div.arrows {
   display: none;
 }
 
