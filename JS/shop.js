@@ -336,7 +336,7 @@ $cleanCart.addEventListener('click', () => {
 // Botón para hacer el pedido
 $btnBuy.addEventListener("click", () => {
     let total = document.querySelector('.cart-total strong').innerText;
-    let mensaje = `Hola, quiero hacer un pedido:\n\n`;
+    let mensaje = `Hola BOLIGLOBOS!, quiero hacer un pedido:\n\n`;
 
     cart.forEach((item) => {
         // Usar el product_id como índice, no como valor de búsqueda
@@ -344,7 +344,7 @@ $btnBuy.addEventListener("click", () => {
     });
     mensaje += `\n*${total}*`;
 
-    const urlWhatsApp = `https://wa.me/3172366425?text=${encodeURIComponent(mensaje)}`;
+    const urlWhatsApp = `https://wa.me/3184215899?text=${encodeURIComponent(mensaje)}`;
     window.open(urlWhatsApp, "_blank");
 });
 
