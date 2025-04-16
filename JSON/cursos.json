@@ -1,0 +1,26 @@
+[
+{
+        "name":"curso1",
+        "price": 58.500,
+        "description": "Herramienta diseñada específicamente para medir globos con exactitud, asegurando resultados impecables en decoraciones. Su diseño robusto y portátil la hace ideal para decoradores profesionales que buscan precisión y calidad en su trabajo.",
+        "image": "../IMG/cursos/CLASE 1.jpg",
+        "instructor": "Instructor 1",
+        "duration": "1 horas"
+    },
+    {
+        "name":"curso2",
+        "price": 58.500,
+        "description": "Herramienta diseñada específicamente para medir globos con exactitud, asegurando resultados impecables en decoraciones. Su diseño robusto y portátil la hace ideal para decoradores profesionales que buscan precisión y calidad en su trabajo.",
+        "image": "../IMG/cursos/CLASE 1.jpg",
+        "instructor": "Instructor 2",
+        "duration": "2 horas"
+    },
+    {
+        "name":"curso3",
+        "price": 58.500,
+        "description": "Herramienta diseñada específicamente para medir globos con exactitud, asegurando resultados impecables en decoraciones. Su diseño robusto y portátil la hace ideal para decoradores profesionales que buscan precisión y calidad en su trabajo.",
+        "image": "../IMG/cursos/CLASE 1.jpg",
+        "instructor": "Instructor 3",
+        "duration": "3 horas"
+    }
+]

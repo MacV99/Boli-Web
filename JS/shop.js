@@ -78,8 +78,8 @@ const addDataToHTML = () => {
     // Limpiar contenido existente del contenedor de productos
     listProductHTML.innerHTML = `
                             <div class="arrows flex-row">
-                              <i class="bi bi-arrow-left-circle-fill flex-row"></i>
-                              <i class="bi bi-arrow-right-circle-fill flex-row"></i>
+                                <i class="bi bi-arrow-left-circle-fill flex-row"></i>
+                                <i class="bi bi-arrow-right-circle-fill flex-row"></i>
                             </div>`;
 
     // Añadir nuevos productos si existen

@@ -3,7 +3,7 @@
   --blue-color: #0096ff;
   --red-color: #ff0000;
   --yellow-color: #ffdc00;
-  --grey-color: #ebebeb;
+  --grey-color: #d6d6d6;
   --black-color: #222;
 }
 
@@ -41,7 +41,6 @@ h2 {
   line-height: 54px;
   color: var(--black-color);
   padding-top: 10px;
-  font-weight: 00;
 }
 
 section>h2 {
@@ -168,6 +167,41 @@ footer {
   flex-direction: row;
 }
 
+
+#close {
+  display: none;
+}
+
+/* INFINITY SLIDER HERO*/
+#hero.carousel-container {
+  background-color: #ffffff;
+  position: relative;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  height: fit-content;
+}
+
+#hero .carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+#hero .carousel-item {
+  flex: 0 0 100%;
+  width: 100%;
+  max-height: 410px;
+  min-height: 350px;
+}
+
+#hero .carousel-item img {
+  width: 100%;
+  max-height: 410px;
+  min-height: 350px;
+  object-fit: cover;
+  filter: opacity(0.9);
+}
+
 #hero h2 {
   position: absolute;
   align-self: center;
@@ -179,7 +213,7 @@ footer {
 }
 
 #title {
-  background-color: #f0f9ff;
+  background-color: #e8f6ff;
 }
 
 #title h2 {
@@ -240,6 +274,7 @@ footer {
   align-items: flex-start;
   background-color: #f0f0f0;
   gap: 35px;
+  margin-top: auto;
 }
 
 footer img {
@@ -385,6 +420,17 @@ footer .col {
   header header nav li {
     margin-bottom: 25px;
   }
+
+  #mobile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  #mobile i {
+    font-size: 21px;
+  }
+
 
   h2 {
     font-size: 27px;

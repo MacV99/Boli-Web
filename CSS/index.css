@@ -293,6 +293,7 @@ div.arrows {
   border-radius: 14px;
   scroll-snap-align: center;
   object-fit: cover;
+
 }
 
 /* MODAL DE IMAGEN TRAYECTORIA */
@@ -318,37 +319,6 @@ div.arrows {
 
 .hidden {
   display: none;
-}
-
-
-/* INFINITY SLIDER HERO*/
-#hero.carousel-container {
-  background-color: #ffffff;
-  position: relative;
-  padding: 0;
-  width: 100%;
-  overflow: hidden;
-  height: fit-content;
-}
-
-#hero .carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-#hero .carousel-item {
-  flex: 0 0 100%;
-  width: 100%;
-  max-height: 410px;
-  min-height: 350px;
-}
-
-#hero .carousel-item img {
-  width: 100%;
-  max-height: 410px;
-  min-height: 350px;
-  object-fit: cover;
-  filter: opacity(0.9);
 }
 
 
@@ -417,25 +387,6 @@ div.arrows {
 
 
 @media (max-width: 799px) {
-  #mobile {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  #mobile i {
-    font-size: 21px;
-  }
-
-  #close {
-    position: absolute;
-    display: initial;
-    top: 30px;
-    left: 14px;
-    color: var(--black-color);
-    font-size: 21px;
-  }
-
 
   #hero img#logo-banner {
     max-width: 210px;
