@@ -1,5 +1,5 @@
 #cursos {
-  gap: 21px;
+  gap: 7px;
 }
 
 #cursos-container {
@@ -71,7 +71,7 @@
   font-weight: bold;
   border: none;
   cursor: pointer;
-  background-color: var(--green-color);
+  background-color: #006d00;
   margin-right: 14px;
 }
 

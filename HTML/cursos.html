@@ -15,7 +15,7 @@
 
 <body>
   <header>
-    <a href="./index.html"><img src="../IMG/logo.png" class="logo" alt=""></a>
+    <a href="./cursos.html"><img src="../IMG/logo.png" class="logo" alt=""></a>
     <div>
       <nav>
         <li><a href="../index.html">Inicio</a></li>
@@ -65,12 +65,33 @@
 
   <!-- NUESTROS CURSOS -->
   <section id="cursos" class="flex-column">
-    <h2>NUESTROS CURSOS</h2>
+    <h2>Explora nuestros cursos disponibles!</h2>
+    <p>Te dejamos aquí una lista con todos los cursos activos. Puedes conocer cada uno en detalle y hacer tu compra
+      directamente</p>
     <div id="cursos-container" class="flex-row">
 
       <!-- aca se cargan los cursos desde el js -->
 
     </div>
+  </section>
+
+
+  <!-- FEATURE -->
+  <section class="feature">
+    <div class="fe-box flex-row">
+      <i class="bi bi-balloon-heart"></i>
+      <h6></h6>
+      <i class="bi bi-balloon-heart"></i>
+    </div>
+  </section>
+
+
+  <!-- ENLACES -->
+  <section id="enlaces" class="flex-column">
+    <h5>¿Ya tienes un curso?</h5>
+    <button>Ir a la plataforma 📚</button>
+    <h5>¿Tienes dudas o necesitas ayuda?</h5>
+    <button>Contactanos 💬</button>
   </section>
 
 
@@ -100,26 +121,21 @@
   <!-- ==VISTAS== -->
   <!-- VISTA DEL CURSO -->
   <div id="v-curso" class="flex-column">
-
     <i id="close-curso" class="bi bi-x-lg"></i>
     <img src="" alt="">
-
     <h2 class="name">name</h2>
     <p class="instructor">instructor</p>
     <p class="description">description</p>
     <p class="price">price</p>
     <p class="duration">duration</p>
+
     <div class="flex-row">
       <button class="adquirir">ADQUIRIR </button>
       <button class="ver">VER</button>
     </div>
-
-
-
-
-
-    <script src="../JS/global.js"></script>
-    <script src="../JS/cursos.js"></script>
+  </div>
+  <script src="../JS/global.js"></script>
+  <script src="../JS/cursos.js"></script>
 </body>
 
 </html>
