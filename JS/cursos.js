@@ -32,8 +32,8 @@ fetch('../JSON/cursos.json')
         $vCurso.querySelector('.name').textContent = `${curso.name}`;
         $vCurso.querySelector('.instructor').textContent = `${curso.instructor}`;
         $vCurso.querySelector('.description').textContent = `${curso.description}`;
-        $vCurso.querySelector('.price').textContent = `${curso.price}`;
-        $vCurso.querySelector('.duration').textContent = `${curso.duration}`;
+        $vCurso.querySelector('.price').textContent = `Precio: ${curso.price}`;
+        $vCurso.querySelector('.duration').textContent = `Duración: ${curso.duration}`;
         $vCurso.style.display = 'flex';
       });
 
