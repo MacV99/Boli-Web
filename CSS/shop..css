@@ -18,13 +18,13 @@
 
 .icon-cart .bi-cart {
   font-size: 28px;
-  color: #222;
+  color: var(--black-color);
 }
 
 .icon-cart span {
   position: absolute;
   color: white;
-  background-color: #222;
+  background-color: var(--black-color);
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -58,7 +58,7 @@
 
 .listProduct .item .product-name {
   font-size: 14px;
-  color: #222;
+  color: var(--black-color);
   margin: 7px 0;
 }
 
@@ -80,27 +80,28 @@
 .cartTab {
   width: 400px;
   background-color: #ffffff;
-  color: #222;
+  color: var(--black-color);
   position: fixed;
   top: 100px;
   right: -400px;
   bottom: 0;
   transition: .4s ease-in-out;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
+  z-index: 10;
 }
 
-body.showCart .cartTab {
+.showCart .cartTab {
   right: 0;
 }
 
-body.showCart .container {
+.showCart .container {
   transform: translateX(-250px);
 }
 
 .cartTab h2 {
   padding: 15px 14px 5px 14px;
   font-size: 28px;
-  color: #222;
+  color: var(--black-color);
 }
 
 .cartTab .btn {
@@ -110,7 +111,7 @@ body.showCart .container {
 }
 
 .cartTab button {
-  color: #222;
+  color: var(--black-color);
   border: none;
   font-weight: 500;
   cursor: pointer;
@@ -118,6 +119,7 @@ body.showCart .container {
   height: 70px;
   font-size: 14px;
   font-weight: 450;
+  background-color: var(--white-color);
 }
 
 
@@ -168,7 +170,7 @@ body.showCart .container {
   width: 25px;
   height: 25px;
   border-radius: 10px;
-  color: #222;
+  color: var(--black-color);
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
@@ -182,7 +184,7 @@ body.showCart .container {
 
 .listCart .quantity span:nth-child(2) {
   background-color: transparent;
-  color: #222;
+  color: var(--black-color);
   cursor: auto;
   width: 23px;
   padding-top: 7px;
@@ -274,7 +276,7 @@ body.showCart .container {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    z-index: 5;
+    z-index: 3;
     padding: 0 35px;
   }
 

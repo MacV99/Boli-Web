@@ -27,9 +27,8 @@ a {
   text-decoration: none;
 }
 
-/* Global Styles */
-
-button {
+button,
+a.button {
   border-radius: 7px;
   padding: 14px 21px;
   color: white;
@@ -38,6 +37,7 @@ button {
   cursor: pointer;
   background-color: #005592;
   margin-right: 14px;
+  font-size: 14px;
 }
 
 h1 {
@@ -107,8 +107,10 @@ p {
 }
 
 
+/* HEADER */
 header {
   display: flex;
+  position: sticky;
   align-items: center;
   justify-content: space-between;
   padding: 20px 70px;
@@ -116,8 +118,7 @@ header {
   backdrop-filter: blur(7px);
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
   height: 100px;
-  z-index: 10;
-  position: sticky;
+  z-index: 100;
   top: 0;
 }
 
@@ -130,30 +131,30 @@ header img {
   height: auto;
 }
 
-nav {
+header nav {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 70px;
 }
 
-nav li {
+header nav li {
   position: relative;
 }
 
-nav li a {
+header nav li a {
   font-size: 16px;
   font-weight: 450;
   color: #3a3a3a;
 }
 
-nav li a:hover,
-nav li a.active {
+header nav li a:hover,
+header nav li a.active {
   color: #0a0a0a;
 }
 
-nav li a.active::after,
-nav li a:hover::after {
+header nav li a.active::after,
+header nav li a:hover::after {
   content: "";
   width: 70%;
   height: 2px;
@@ -174,11 +175,14 @@ nav li a:hover::after {
   cursor: pointer;
 }
 
+
 section,
 footer {
   padding: 45px 10%;
 }
 
+
+/* FLEX ROW Y FLEX COLUMN */
 .flex-column,
 .listCart .quantity span .bi,
 .listCart .quantity span {
@@ -199,6 +203,7 @@ footer {
 #close {
   display: none;
 }
+
 
 /* INFINITY SLIDER HERO*/
 #hero.carousel-container {
@@ -240,6 +245,7 @@ footer {
   border-radius: 14px;
 }
 
+
 #title {
   background-color: #e8f6ff;
 }
@@ -250,6 +256,7 @@ footer {
   width: fit-content;
   border-bottom: solid 1px var(--black-color);
 }
+
 
 .feature {
   display: flex;
@@ -294,6 +301,7 @@ footer {
   content: 'Porque nuestros corazones son de látex';
   text-transform: uppercase;
 }
+
 
 footer {
   display: flex;
@@ -474,6 +482,4 @@ footer .col {
   .feature .fe-box .bi-balloon-heart {
     font-size: 9px;
   }
-
-
 }
