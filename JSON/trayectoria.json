@@ -21,10 +21,7 @@
     "./IMG/trayectoria/2014/3.jpg",
     "./IMG/trayectoria/2014/4.jpg",
     "./IMG/trayectoria/2014/6.jpg",
-    "./IMG/trayectoria/2014/8.jpg",
-    "./IMG/trayectoria/2017/3.jpg",
-    "./IMG/trayectoria/2017/4.jpg",
-    "./IMG/trayectoria/2017/1.jpg"
+    "./IMG/trayectoria/2014/8.jpg"
   ],
   "2015": [
     "./IMG/trayectoria/2015/1.jpg",
@@ -35,18 +32,20 @@
     "./IMG/trayectoria/2015/8.jpg"
   ],
   "2017": [
+    "./IMG/trayectoria/2017/7.jpg",
+    "./IMG/trayectoria/2017/8.jpg",
+    "./IMG/trayectoria/2017/9.jpg",
     "./IMG/trayectoria/2017/1.jpg",
     "./IMG/trayectoria/2017/2.jpg",   
     "./IMG/trayectoria/2017/3.jpg",
     "./IMG/trayectoria/2017/4.jpg",
     "./IMG/trayectoria/2017/5.jpg",
-    "./IMG/trayectoria/2017/6.jpg",
-    "./IMG/trayectoria/2017/7.jpg",
-    "./IMG/trayectoria/2017/8.jpg",
-    "./IMG/trayectoria/2017/9.jpg"
-    
+    "./IMG/trayectoria/2017/6.jpg" 
   ],
   "2018": [
+    "./IMG/trayectoria/2018/12.jpg",
+    "./IMG/trayectoria/2018/11.jpg",
+    "./IMG/trayectoria/2018/10.jpg",
     "./IMG/trayectoria/2018/1.jpg",
     "./IMG/trayectoria/2018/2.jpg",   
     "./IMG/trayectoria/2018/3.jpg",
@@ -54,25 +53,21 @@
     "./IMG/trayectoria/2018/5.jpg",
     "./IMG/trayectoria/2018/6.jpg",
     "./IMG/trayectoria/2018/7.jpg",
-    "./IMG/trayectoria/2018/8.jpg",
-    "./IMG/trayectoria/2018/9.jpg",
-    "./IMG/trayectoria/2018/10.jpg",
-    "./IMG/trayectoria/2018/11.jpg",
-    "./IMG/trayectoria/2018/12.jpg"
+    "./IMG/trayectoria/2018/8.jpg"
   ],
   "2019": [
-    "./IMG/trayectoria/2019/1.jpg",
     "./IMG/trayectoria/2019/2.jpg",
+    "./IMG/trayectoria/2019/5.jpg",
+    "./IMG/trayectoria/2019/1.jpg",
     "./IMG/trayectoria/2019/3.jpg",
     "./IMG/trayectoria/2019/4.jpg",
-    "./IMG/trayectoria/2019/5.jpg",
     "./IMG/trayectoria/2019/6.jpg"
   ],
   "2020": [
-    "./IMG/trayectoria/2020/1.jpg",
     "./IMG/trayectoria/2020/2.jpg",
     "./IMG/trayectoria/2020/3.jpg",
-    "./IMG/trayectoria/2020/4.jpg"
+    "./IMG/trayectoria/2020/4.jpg",
+    "./IMG/trayectoria/2020/1.jpg"
   ],
   "2021": [
     "./IMG/trayectoria/2021/1.jpg",
