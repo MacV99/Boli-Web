@@ -3,7 +3,7 @@
         "name":"abc-de-los-globos",
         "price": 58.500,
         "description": "Domina los fundamentos para que cualquier diseño que imagines comience con una base sólida.",
-        "image": "../IMG/cursos/abc-de-los-globos.jpg",
+        "image": "../IMG/cursos/MINIATURA ABC.jpg",
         "instructor": "Instructor 1",
         "duration": "1 horas"
     },
@@ -11,15 +11,31 @@
         "name":"guirnaldas",
         "price": 58.500,
         "description": "Aprende a crear guirnaldas versátiles y elegantes que se adapten a cualquier ocasión",
-        "image": "../IMG/cursos/guirnaldas.jpg",
+        "image": "../IMG/cursos/MINIATURA GUIRNALDAS.jpg",
         "instructor": "Instructor 2",
         "duration": "2 horas"
+    },
+    {
+        "name":"montaje-de-escenarios",
+        "price": 58.500,
+        "description": "Aprende a diseñar escenarios completos que transforman cualquier espacio en una fiesta espectacular.",
+        "image": "../IMG/cursos/MINIATURA ESCENARIO.jpg",
+        "instructor": "Instructor 3",
+        "duration": "3 horas"
+    },
+    {
+        "name":"modelado-y-distorision-con-globos",
+        "price": 58.500,
+        "description": "Desarrolla habilidades avanzadas para crear figuras y diseños únicos que te permiten vender decoraciones de alto nivel.",
+        "image": "../IMG/cursos/MINIATURA MODELADO.jpg",
+        "instructor": "Instructor 3",
+        "duration": "3 horas"
     },
     {
         "name":"desayunos-sorpresa",
         "price": 58.500,
         "description": "Sorprende con estos entregables decorados, personalizados y muy apetecidos para momentos inolvidables, con alta rentabilidad para ti.",
-        "image": "../IMG/cursos/desayunos-sorpresa.jpg",
+        "image": "../IMG/cursos/MINIATURA DESAYUNO.jpg",
         "instructor": "Instructor 3",
         "duration": "3 horas"
     },
@@ -27,14 +43,15 @@
         "name":"ultra-bouquets",
         "price": 58.500,
         "description": "Diseña arreglos llamativos y únicos que se convertirán en el centro de atención de cualquier evento",
-        "image": "../IMG/cursos/ultra-bouquets.jpg",
+        "image": "../IMG/cursos/MINIATURA ULTRA BOUQUET.jpg",
         "instructor": "Instructor 3",
         "duration": "3 horas"
-    },{
-        "name":"modelado-y-distorision-con-globos",
+    },
+    {
+        "name":"mosaicos",
         "price": 58.500,
-        "description": "Desarrolla habilidades avanzadas para crear figuras y diseños únicos que te permiten vender decoraciones de alto nivel.",
-        "image": "../IMG/cursos/modelado-y-distorision-con-globos.jpg",
+        "description": "Diseña arreglos llamativos y únicos que se convertirán en el centro de atención de cualquier evento",
+        "image": "../IMG/cursos/MINIATURA MOSAICOS.jpg",
         "instructor": "Instructor 3",
         "duration": "3 horas"
     },
@@ -42,16 +59,8 @@
         "name":"tecnica-organica",
         "price": 58.500,
         "description": "Perfecciona una de las tendencias más demandadas en decoración de eventos. Maneja proporciones, volúmenes y detalles que elevan su costo.",
-        "image": "../IMG/cursos/tecnica-organica.jpg",
+        "image": "../IMG/cursos/MINIATURA ORGANIC.jpg",
         "instructor": "Instructor 3",
         "duration": "3 horas"
-    },
-    {
-        "name":"montaje-de-escenarios",
-        "price": 58.500,
-        "description": "Aprende a diseñar escenarios completos que transforman cualquier espacio en una fiesta espectacular.",
-        "image": "../IMG/cursos/montaje-de-escenarios.jpg",
-        "instructor": "Instructor 3",
-        "duration": "3 horas"
-    }    
+    }   
 ]

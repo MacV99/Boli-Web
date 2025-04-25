@@ -131,11 +131,9 @@ div.arrows {
 }
 
 
-
 #close {
   display: none;
 }
-
 
 
 #v-product {
@@ -349,14 +347,14 @@ div.arrows {
 }
 
 #testimonials .slider-item>div {
-  gap: 7px;
+  gap: 14px;
 }
 
 #testimonials .slider-item iframe {
-  max-width: 210px;
-  height: 100%;
+  width: 350px;
+  height: 350px;
   object-fit: cover;
-  border-radius: 7px;
+  border-radius: 14px;
 }
 
 #testimonials .slider-item h4 {
@@ -436,10 +434,7 @@ div.arrows {
   }
 
   #testimonials .slider-item iframe {
-    width: 70%;
     max-width: 100%;
-    height: auto;
-    border-radius: 14px;
   }
 
 
