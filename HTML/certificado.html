@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Generador de Certificados</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f5f6fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px 15px;
+      width: 300px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Generador de Certificados</h1>
+  <div class="form-container">
+    <input type="text" id="nombre" placeholder="Ingresa tu nombre" />
+    <br>
+    <button onclick="generarCertificado()">Descargar Certificado</button>
+  </div>
+
+  <canvas id="certCanvas" width="842" height="595" style="display:none;"></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    async function generarCertificado() {
+      const nombre = document.getElementById('nombre').value.trim();
+      if (!nombre) {
+        alert('Por favor ingresa un nombre');
+        return;
+      }
+
+      const fecha = new Date().toLocaleDateString('es-CO', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+
+      const canvas = document.getElementById('certCanvas');
+      const ctx = canvas.getContext('2d');
+
+      // Fondo
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Borde
+      ctx.strokeStyle = '#2980b9';
+      ctx.lineWidth = 8;
+      ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+
+      // Título
+      ctx.fillStyle = '#2c3e50';
+      ctx.font = '30px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('CERTIFICADO DE PARTICIPACIÓN', canvas.width / 2, 120);
+
+      // Contenido
+      ctx.font = '20px Arial';
+      ctx.fillText('Otorgado a:', canvas.width / 2, 200);
+
+      ctx.font = '28px Arial';
+      ctx.fillStyle = '#000';
+      ctx.fillText(nombre, canvas.width / 2, 250);
+
+      ctx.font = '20px Arial';
+      ctx.fillStyle = '#2c3e50';
+      ctx.fillText('Por su participación destacada en el curso', canvas.width / 2, 300);
+      ctx.fillText('de formación profesional.', canvas.width / 2, 330);
+
+      // Fecha
+      ctx.font = '16px Arial';
+      ctx.fillText(`Fecha: ${fecha}`, canvas.width / 2, 400);
+
+      // Exportar como PDF
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({ orientation: 'landscape', unit: 'px', format: [842, 595] });
+      const imgData = canvas.toDataURL('image/png');
+      pdf.addImage(imgData, 'PNG', 0, 0, 842, 595);
+      pdf.save(`certificado_${nombre}.pdf`);
+    }
+  </script>
+</body>
+
+</html>
