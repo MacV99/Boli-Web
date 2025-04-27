@@ -1,11 +1,13 @@
 let $closeCurso = document.getElementById('close-curso');
 let $vCurso = document.getElementById('v-curso');
+let $comprarCurso = document.getElementById('comprar-curso');
+
+
 
 // CERRAR CURSO
 $closeCurso.addEventListener('click', () => {
   $vCurso.style.display = 'none';
 });
-
 
 
 // Cargar cursos desde el archivo JSON
@@ -44,3 +46,18 @@ fetch('../JSON/cursos.json')
   .catch(error => {
     console.error('Error al cargar los cursos:', error);
   });
+
+$comprarCurso.addEventListener('click', () => {
+  let $nameCurso = document.getElementsByClassName('name')[0].textContent;
+
+  const mensaje = `Hola, quiero adquirir el curso: ${$nameCurso} 📚`;
+  const numeroTelefono = "573184215899"; // Número de WhatsApp en formato internacional sin espacios ni signos
+
+  const enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${numeroTelefono}&text=${encodeURIComponent(mensaje)}`;
+
+  window.open(enlaceWhatsApp, '_blank'); // Abre el enlace en una nueva pestaña
+  console.log($nameCurso);
+
+});
+
+

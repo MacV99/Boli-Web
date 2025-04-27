@@ -3,124 +3,122 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Generador de Certificados</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #f5f6fa;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-    }
-
-    h1 {
-      color: #2c3e50;
-      margin-bottom: 20px;
-    }
-
-    .form-container {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    input[type="text"] {
-      padding: 10px 15px;
-      width: 300px;
-      font-size: 16px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    button {
-      background-color: #3498db;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #2980b9;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/global.css">
+  <link rel="stylesheet" href="../CSS/certificado.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="../IMG/logo.png">
+  <title>Certificado</title>
 </head>
 
 <body>
-  <h1>Generador de Certificados 2.0</h1>
-  <div class="form-container">
-    <input type="text" id="nombre" placeholder="Ingresa tu nombre" />
-    <br>
-    <button onclick="generarCertificado()">Descargar Certificado</button>
-  </div>
+  <header>
+    <a href="../index.html"><img src="../IMG/logo.png" class="logo" alt=""></a>
+    <div>
+      <nav>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="./shop.html">Tienda</a></li>
+        <!-- <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li> -->
+        <!-- <li><a href="cart.html"><i class="bi bi-bag"></i></a></li> -->
+        <i id="close" class="bi bi-x-lg"></i>
+        <li><a href="./cursos.html">Cursos</i></a></li>
+      </nav>
+    </div>
+    <div id="mobile">
+      <!-- <a href="../HTML/shop.html"><i class="bi bi-bag"></i></a> -->
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="./shop.html">Tienda</i></a></li>
+      <li><a href="./cursos.html">Cursos</i></a></li>
+      <!-- <i id="bar" class="bi bi-list"></i> -->
+    </div>
+  </header>
 
-  <canvas id="certCanvas" width="842" height="595" style="display:none;"></canvas>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- CERTIFICADO -->
+  <section id="certificado" class="flex-column">
+    <h2>¡Felicidades! Genera tu Certificado de Participación</h2>
+    <p>Reconoce tu esfuerzo y celebra tu logro. Descarga tu certificado personalizado</p>
+    <div class="form-container">
+      <input type="text" id="nombre" placeholder="Ingresa tu nombre" />
+      <br>
+      <button onclick="generarCertificado()">Descargar Certificado</button>
+    </div>
+    <p>"Cada logro, grande o pequeño, merece ser celebrado. Gracias por confiar en nosotros para acompañarte en tu
+      formación."</p>
+
+    <canvas id="certCanvas" width="1600" height="1131" style="display:none;"></canvas>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="col">
+      <h4>Contacto</h4>
+      <p><strong>Dirección:</strong> Calle 46 No 9 ~ 57P NEIVA / HUILA</p>
+      <p><strong>Teléfono:</strong> 3184215899</p>
+      <div class="follow">
+        <h4>Síguenos</h4>
+        <a href="https://www.instagram.com/boliglobos_latino/?hl=en" target="_blank" aria-label="Instagram"><i
+            class="bi bi-instagram"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=+573184215899&text=Hola,%20quiero%20adquirir%20un%20producto%F0%9F%8E%88"
+          target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.facebook.com/Boligloboslatino/?locale=es_LA" target="_blank" aria-label="Facebook"><i
+            class="bi bi-facebook"></i></a>
+        <a href="https://www.tiktok.com/@boliglobos" target="_blank" aria-label="TikTok"><i
+            class="bi bi-tiktok"></i></a>
+        <a href="https://www.youtube.com/@boligloboslatino" target="_blank" aria-label="YouTube"><i
+            class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    async function generarCertificado() {
+    function generarCertificado() {
       const nombre = document.getElementById('nombre').value.trim();
       if (!nombre) {
         alert('Por favor ingresa un nombre');
         return;
       }
 
-      const fecha = new Date().toLocaleDateString('es-CO', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
+      const fecha = new Date();
+      const dia = fecha.getDate();
+      const anio = fecha.getFullYear();
+      const mes = fecha.toLocaleString('default', { month: 'long' });
 
       const canvas = document.getElementById('certCanvas');
       const ctx = canvas.getContext('2d');
 
-      // Fondo
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Cargar imagen de fondo
+      const fondo = new Image();
+      fondo.src = './CERTIFICADO 0 A 100 PAOLA.jpg'; // Ruta donde está tu imagen
 
-      // Borde
-      ctx.strokeStyle = '#2980b9';
-      ctx.lineWidth = 8;
-      ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+      fondo.onload = function () {
+        // Dibujar fondo
+        ctx.drawImage(fondo, 0, 0, canvas.width, canvas.height);
 
-      // Título
-      ctx.fillStyle = '#2c3e50';
-      ctx.font = '30px Arial';
-      ctx.textAlign = 'center';
-      ctx.fillText('CERTIFICADO DE PARTICIPACIÓN', canvas.width / 2, 120);
+        // Configuración de texto
+        ctx.fillStyle = '#000000';
+        ctx.font = 'bold 40px Arial';
+        ctx.textAlign = 'center';
 
-      // Contenido
-      ctx.font = '20px Arial';
-      ctx.fillText('Otorgado a:', canvas.width / 2, 200);
+        // Escribir el nombre
+        ctx.fillText(nombre, canvas.width / 2, 370);
 
-      ctx.font = '28px Arial';
-      ctx.fillStyle = '#000';
-      ctx.fillText(nombre, canvas.width / 2, 250);
+        // Escribir la fecha (día y año)
+        ctx.font = '28px Arial';
+        ctx.textAlign = 'left';
+        ctx.fillText(dia, 670, 787);  // posición ajustada para el "día"
+        ctx.fillText(mes, 1000, 787); // posición ajustada para el "año"
 
-      ctx.font = '20px Arial';
-      ctx.fillStyle = '#2c3e50';
-      ctx.fillText('Por su participación destacada en el curso', canvas.width / 2, 300);
-      ctx.fillText('de formación profesional.', canvas.width / 2, 330);
-
-      // Fecha
-      ctx.font = '16px Arial';
-      ctx.fillText(`Fecha: ${fecha}`, canvas.width / 2, 400);
-
-      // Exportar como PDF
-      const { jsPDF } = window.jspdf;
-      const pdf = new jsPDF({ orientation: 'landscape', unit: 'px', format: [842, 595] });
-      const imgData = canvas.toDataURL('image/png');
-      pdf.addImage(imgData, 'PNG', 0, 0, 842, 595);
-      pdf.save(`certificado_${nombre}.pdf`);
+        // Crear la imagen JPG y descargar
+        const link = document.createElement('a');
+        link.download = `certificado_${nombre}.jpg`;
+        link.href = canvas.toDataURL('image/jpeg', 1.0);
+        link.click();
+      };
     }
   </script>
 </body>
