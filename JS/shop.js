@@ -348,7 +348,7 @@ $btnBuy.addEventListener("click", () => {
     });
     mensaje += `\n*${total}*`;
 
-    const urlWhatsApp = `https://wa.me/3184215899?text=${encodeURIComponent(mensaje)}`;
+    const urlWhatsApp = `https://wa.me/573184215899?text=${encodeURIComponent(mensaje)}`;
     window.open(urlWhatsApp, "_blank");
 });
 
