@@ -1,3 +1,5 @@
+let $floatWhasapp = document.querySelector('.float-whatsapp');
+
 // INFINITY SLIDER
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('carouselTrack');
@@ -36,3 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cambiar imagen cada 3 segundos
   setInterval(moveCarousel, 3000);
 });
+
+// CLICK EN FLOAT-WHATSAPP
+$floatWhasapp.addEventListener('click', function () {
+  const urlWhatsApp = `https://wa.me/573184215899?text=Hola BOLIGLOBOS`;
+  window.open(urlWhatsApp, "_blank");
+});
+
+

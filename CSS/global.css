@@ -347,7 +347,8 @@ footer .follow {
 
 footer .follow i {
   color: #465b52;
-  padding-right: 4px;
+  padding-right: 14px;
+  font-size: 28px;
   cursor: pointer;
 }
 
@@ -355,6 +356,22 @@ footer .col {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+
+.float-whatsapp {
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  font-size: 28px;
+  background-color: #4dc85b;
+  width: fit-content;
+  border-radius: 200px;
+  padding: 14px;
+  color: #fff;
+  z-index: 10;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.35);
 }
 
 /* KEYRFAMES */
