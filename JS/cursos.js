@@ -32,7 +32,7 @@ fetch('../JSON/cursos.json')
       $divCurso.addEventListener('click', () => {
         $vCurso.querySelector('img').src = `${curso.image}`;
         $vCurso.querySelector('.name').textContent = `${curso.name}`;
-        $vCurso.querySelector('.instructor').textContent = `${curso.instructor}`;
+        // $vCurso.querySelector('.instructor').textContent = `${curso.instructor}`;
         $vCurso.querySelector('.description').textContent = `${curso.description}`;
         $vCurso.querySelector('.price').textContent = `Precio: ${curso.price}`;
         $vCurso.querySelector('.duration').textContent = `Duración: ${curso.duration}`;
