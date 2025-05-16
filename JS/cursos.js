@@ -30,11 +30,11 @@ fetch('../JSON/cursos.json')
 
       // Agregar evento a cada curso
       $divCurso.addEventListener('click', () => {
-        $vCurso.querySelector('img').src = `${curso.image}`;
+        // $vCurso.querySelector('img').src = `${curso.image}`;
         $vCurso.querySelector('.name').textContent = `${curso.name}`;
         // $vCurso.querySelector('.instructor').textContent = `${curso.instructor}`;
-        $vCurso.querySelector('.description').textContent = `${curso.description}`;
-        $vCurso.querySelector('.price').textContent = `Precio: ${curso.price}`;
+        $vCurso.querySelector('.description').innerHTML = curso.description.replace(/\n/g, '<br>');
+        $vCurso.querySelector('.price').textContent = `Precio: ${curso.price} USD`;
         $vCurso.querySelector('.duration').textContent = `Duración: ${curso.duration}`;
         $vCurso.style.display = 'flex';
       });

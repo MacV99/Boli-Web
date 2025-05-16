@@ -1,6 +1,6 @@
 [
-{
-        "name":"abc-de-los-globos",
+    {
+        "name": "abc-de-los-globos",
         "price": 87,
         "description": "Domina los fundamentos para que cualquier diseño que imagines comience con una base sólida.",
         "image": "../IMG/cursos/MINIATURA ABC.jpg",
@@ -8,31 +8,31 @@
         "duration": "1 horas"
     },
     {
-        "name":"guirnaldas",
+        "name": "Técnica GUIRNALDAS",
         "price": 87,
-        "description": "Aprende a crear guirnaldas versátiles y elegantes que se adapten a cualquier ocasión",
+        "description": "En esta clase aprenderás paso a paso cómo crear guirnaldas versátiles con diferentes técnicas que se adapten a todo tipo de eventos. Armado desde cero, selección de globos, combinación de tamaños y colores.\n Te enseñaremos como adaptar una guirnalda a diferentes estructuras como arcos, marcos, columnas, muros, además  Profundizaras en los trucos profesionales para que tus guirnaldas sean mas resistentes, duraderas y fáciles de transportar e instalar.\n Esta clase esta dirigida para amas de casa y emprendedoras que estén iniciando su negocio, para personas apisonadas por los globos que desean convertir su talento en ingresos reales. ",
         "image": "../IMG/cursos/MINIATURA GUIRNALDAS.jpg",
         "instructor": "Instructor 2",
         "duration": "2 horas"
     },
     {
-        "name":"montaje-de-escenarios",
+        "name": "Montaje de ESCENARIOS",
         "price": 107,
-        "description": "Aprende a diseñar escenarios completos que transforman cualquier espacio en una fiesta espectacular.",
+        "description": "Aprende a crear decoraciones que transforman espacios comunes en mundos mágicos, en esta clase aprenderás una de las habilidades más valoradas en la industria de la decoración con globos: El montaje completo de escenarios aprenderás planificación, creatividad y herramientas para desarrollar decoraciones temáticas que  autivan desde el primer vistazo. No se trata solo de decorar sino de contar historias que emocionan y que generan bellos recuerdos.",
         "image": "../IMG/cursos/MINIATURA ESCENARIO.jpg",
         "instructor": "Instructor 3",
         "duration": "3 horas"
     },
     {
-        "name":"modelado-y-distorision-con-globos",
+        "name": "Modelado Y DISTORSIÓN Con Globos",
         "price": 97,
-        "description": "Desarrolla habilidades avanzadas para crear figuras y diseños únicos que te permiten vender decoraciones de alto nivel.",
+        "description": "Aprende a esculpir y eleva tus decoraciones.\n El modelado o distorsión consiste en manipular los globos mediante torsión, presión y unión estratégica para dar diferentes formas a nuestros globos.\n Es una técnica artística que permite deformar intencionalmente el globo para lograr formas específicas como pétalos, rostros, partes del cuerpo, elementos de la naturaleza, etc. La correcta manipulación de esta técnica permitirá que te diferencies de otros decoradores ya que muchos no conocen o no aplican bien esta técnica.",
         "image": "../IMG/cursos/MINIATURA MODELADO.jpg",
         "instructor": "Instructor 3",
         "duration": "3 horas"
     },
     {
-        "name":"desayunos-sorpresa",
+        "name": "desayunos-sorpresa",
         "price": 67,
         "description": "Sorprende con estos entregables decorados, personalizados y muy apetecidos para momentos inolvidables, con alta rentabilidad para ti.",
         "image": "../IMG/cursos/MINIATURA DESAYUNO.jpg",
@@ -40,43 +40,43 @@
         "duration": "3 horas"
     },
     {
-        "name":"ultra-bouquets",
+        "name": "Ultra BOUQUET",
         "price": 67,
-        "description": "Diseña arreglos llamativos y únicos que se convertirán en el centro de atención de cualquier evento",
+        "description": "Aprende a diseñar arreglos personalizados impactantes que se roban todas las miradas.\n En esta clase descubrirás como crear ultra bouquets, estructuras sorprendentes que combinan creatividad, técnica profesional y diseño temático para transformar cualquier celebración en una experiencia inolvidable, con esta técnica aprenderás a generar niveles, desarrollando estructuras de gran tamaño y resistentes a la manipulación haciendo que sea fácil de transportar.\n Ideal para quienes quieren generar ingresos desde la comodidad de su casa",
         "image": "../IMG/cursos/MINIATURA ULTRA BOUQUET.jpg",
         "instructor": "Instructor 3",
         "duration": "3 horas"
     },
     {
-        "name":"mosaicos",
+        "name": "Técnica de MOSAICOS",
         "price": 97,
-        "description": "Diseña arreglos llamativos y únicos que se convertirán en el centro de atención de cualquier evento",
+        "description": "El mosaico es una de las técnicas más modernas, versátiles y llamativas dentro del mundo de la decoración profesional. Esta clase te enseña a crear estructuras impactantes que combinan arte, color y volumen. Puedes realizar números gigantes, letras, figuras temáticas o incluso personajes. Es especial para dar acabado y personalización a grandes montajes, puede ser el diferencial de nuestra decoración.",
         "image": "../IMG/cursos/MINIATURA MOSAICOS.jpg",
         "instructor": "Instructor 3",
         "duration": "3 horas"
     },
     {
-        "name":"tecnica-organica",
+        "name": "TÉCNICA ORGÁNICA",
         "price": 87,
-        "description": "Perfecciona una de las tendencias más demandadas en decoración de eventos. Maneja proporciones, volúmenes y detalles que elevan su costo.",
+        "description": "Esta técnica ha revolucionado la forma en que se decora con globos, en esta clase aprenderás a trabajarla desde la base hasta los detalles más complejos.\n Es una composición visual que quiere imitar las formas de la naturaleza, teniendo formas asimétricas pero armónicas, con diferentes volúmenes logrando un estilo moderno que le encanta a los clientes.\n En esta técnica mezclamos globos de diferentes tamaños, colores y texturas. Es ideal para hacer arcos, columnas, fondos de escenarios, entradas, techos, sets fotográficos entre otros.",
         "image": "../IMG/cursos/MINIATURA ORGANIC.jpg",
         "instructor": "Instructor 3",
         "duration": "3 horas"
     },
     {
-        "name":"costos",
+        "name": "costos",
         "price": 87,
         "description": "Perfecciona una de las tendencias más demandadas en decoración de eventos. Maneja proporciones, volúmenes y detalles que elevan su costo.",
-        "image": "../IMG/cursos/MINIATURA ORGANIC.jpg",
+        "image": "../IMG/cursos/costos.jpg",
         "instructor": "Instructor 3",
         "duration": "3 horas"
     },
     {
-        "name":"marketing",
+        "name": "marketing",
         "price": 87,
         "description": "Perfecciona una de las tendencias más demandadas en decoración de eventos. Maneja proporciones, volúmenes y detalles que elevan su costo.",
-        "image": "../IMG/cursos/MINIATURA ORGANIC.jpg",
+        "image": "../IMG/cursos/marketing.jpg",
         "instructor": "Instructor 3",
         "duration": "3 horas"
-    } 
+    }
 ]
