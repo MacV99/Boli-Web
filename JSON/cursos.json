@@ -32,14 +32,6 @@
         "duration": "2h y 10min"
     },
     {
-        "name": "desayunos-sorpresa",
-        "price": 67,
-        "description": "Sorprende con estos entregables decorados, personalizados y muy apetecidos para momentos inolvidables, con alta rentabilidad para ti.",
-        "image": "../IMG/cursos/MINIATURA DESAYUNO.jpg",
-        "instructor": "Instructor 3",
-        "duration": "1h y 54 min"
-    },
-    {
         "name": "Ultra BOUQUET",
         "price": 67,
         "description": "Aprende a diseñar arreglos personalizados impactantes que se roban todas las miradas.\n En esta clase descubrirás como crear ultra bouquets, estructuras sorprendentes que combinan creatividad, técnica profesional y diseño temático para transformar cualquier celebración en una experiencia inolvidable, con esta técnica aprenderás a generar niveles, desarrollando estructuras de gran tamaño y resistentes a la manipulación haciendo que sea fácil de transportar.\n Ideal para quienes quieren generar ingresos desde la comodidad de su casa",
@@ -64,19 +56,27 @@
         "duration": "1h y 46 min"
     },
     {
-        "name": "costos",
+        "name": "MASTER CLASS COMO COBRAR",
         "price": 87,
-        "description": "Perfecciona una de las tendencias más demandadas en decoración de eventos. Maneja proporciones, volúmenes y detalles que elevan su costo.",
+        "description": "",
         "image": "../IMG/cursos/costos.jpg",
         "instructor": "Instructor 3",
         "duration": "1h y 14 min"
     },
     {
-        "name": "marketing",
+        "name": "MASTER CLASS MARKETING PARA DECORADORES",
         "price": 87,
-        "description": "Perfecciona una de las tendencias más demandadas en decoración de eventos. Maneja proporciones, volúmenes y detalles que elevan su costo.",
+        "description": "",
         "image": "../IMG/cursos/marketing.jpg",
         "instructor": "Instructor 3",
         "duration": "1h y 2min"
+    },
+    {
+        "name": "desayunos-sorpresa",
+        "price": 67,
+        "description": "Sorprende con estos entregables decorados, personalizados y muy apetecidos para momentos inolvidables, con alta rentabilidad para ti.",
+        "image": "../IMG/cursos/MINIATURA DESAYUNO.jpg",
+        "instructor": "Instructor 3",
+        "duration": "1h y 54 min"
     }
 ]
