@@ -16,6 +16,14 @@
         "duration": "1h y 36min"
     },
     {
+        "name": "BOLIRED",
+        "price": 67,
+        "description": "",
+        "image": "../IMG/cursos/bolired.jpg",
+        "instructor": "Instructor 3",
+        "duration": "1h y 54 min"
+    },
+    {
         "name": "Montaje de ESCENARIOS",
         "price": 107,
         "description": "Aprende a crear decoraciones que transforman espacios comunes en mundos mágicos, en esta clase aprenderás una de las habilidades más valoradas en la industria de la decoración con globos: El montaje completo de escenarios aprenderás planificación, creatividad y herramientas para desarrollar decoraciones temáticas que  autivan desde el primer vistazo. No se trata solo de decorar sino de contar historias que emocionan y que generan bellos recuerdos.",
