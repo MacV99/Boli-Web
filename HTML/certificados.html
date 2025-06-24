@@ -1,0 +1,191 @@
+<!-- Estructura HTML completa con select de cursos y generación dinámica del certificado -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../CSS/global.css" />
+  <link rel="stylesheet" href="../CSS/certificado.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="../IMG/logo.png" />
+  <title>Certificado</title>
+</head>
+
+<body>
+  <header>
+    <a href="../index.html"><img src="../IMG/logo.png" class="logo" alt="logo" /></a>
+    <div>
+      <nav>
+        <li><a href=".././index.html">Nosotros</a></li>
+        <li><a href="./shop.html">Tienda</a></li>
+        <li><a href="./cursos.html">Cursos</i></a></li>
+        <li><a href="./certificados.html">Certificados</i></a></li>
+        <i id="close" class="bi bi-x-lg"></i>
+      </nav>
+    </div>
+    <div id="mobile">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="./shop.html">Tienda</a></li>
+      <li><a href="./cursos.html">Cursos</i></a></li>
+      <li><a href="./certificados.html">Certificados</i></a></li>
+    </div>
+    <!-- <i id="bar" class="bi bi-list"></i> -->
+  </header>
+
+  <!-- CERTIFICADO -->
+  <section id="certificado" class="flex-column">
+    <h2>¡Felicidades! Genera tu Certificado de Participación</h2>
+    <p>Reconoce tu esfuerzo y celebra tu logro. Descarga tu certificado personalizado</p>
+    <select id="curso">
+      <option value="">Selecciona un curso</option>
+      <option value="globos-rentables">Globos Rentables</option>
+      <option value="cero-cien">Decorando de 0 a 100</option>
+    </select>
+    <div class="form-container">
+
+      <br>
+      <input type="text" id="cedula" placeholder="Ingresa tu cédula" />
+      <br />
+      <button onclick="verificarYGenerar()">Descargar Certificado</button>
+    </div>
+    <p>"Cada logro, grande o pequeño, merece ser celebrado. Gracias por confiar en nosotros para acompañarte en tu
+      formación."</p>
+    <canvas id="certCanvas" width="1280" height="989" style="display:none;"></canvas>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="col">
+      <h4>Contacto</h4>
+      <p><strong>Dirección:</strong> Calle 46 No 9 ~ 57P NEIVA / HUILA</p>
+      <p><strong>Teléfono:</strong> 3184215899</p>
+      <div class="follow">
+        <h4>Síguenos</h4>
+        <a href="https://www.instagram.com/boliglobos_latino/?hl=en" target="_blank" aria-label="Instagram"><i
+            class="bi bi-instagram"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=+573184215899&text=Hola,%20quiero%20adquirir%20un%20producto%F0%9F%8E%88"
+          target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.facebook.com/Boligloboslatino/?locale=es_LA" target="_blank" aria-label="Facebook"><i
+            class="bi bi-facebook"></i></a>
+        <a href="https://www.tiktok.com/@boliglobos" target="_blank" aria-label="TikTok"><i
+            class="bi bi-tiktok"></i></a>
+        <a href="https://www.youtube.com/@boligloboslatino" target="_blank" aria-label="YouTube"><i
+            class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <i class="bi bi-whatsapp flex-column float-whatsapp"></i>
+
+  <script>
+    const cursos = {
+      "globos-rentables": {
+        gid: "0",
+        plantilla: "globos-rentables.jpg",
+        xNombre: 457,
+        yNombre: 235,
+        fontSizeNombre: 45,
+        xDia: 348,
+        yDia: 785,
+        xMes: 650,
+        yMes: 785
+      },
+      "cero-cien": {
+        gid: "1773016849",
+        plantilla: "cero-cien.jpg",
+        xNombre: 637,
+        yNombre: 335,
+        fontSizeNombre: 45,
+        xDia: 520,
+        yDia: 690,
+        xMes: 810,
+        yMes: 690
+      }
+    };
+
+
+    async function buscarNombre(cedula, gid) {
+      const url = `https://docs.google.com/spreadsheets/d/e/2PACX-1vQH0gNaC2Gh8m9c0CjrwOm7zAz7hruvLBKpuZGq87cAC_UK_7lP8GjbJpqF3qir93rlxzTrCQ9oNgYh/pubhtml?gid=${gid}&single=true`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+
+      const rows = Array.from(doc.querySelectorAll('.waffle tbody tr'));
+      if (rows.length < 2) return null;
+
+      const headers = Array.from(rows[0].querySelectorAll('td')).map(td => td.textContent.trim().toLowerCase());
+      const idxCedula = headers.indexOf('cedula');
+      const idxNombre = headers.indexOf('nombre');
+      const dataRows = rows.slice(1);
+      cedula = cedula.trim().toLowerCase();
+
+      for (let row of dataRows) {
+        const cells = row.querySelectorAll('td');
+        const valorCedula = cells[idxCedula]?.textContent.trim().toLowerCase();
+        const nombre = cells[idxNombre]?.textContent.trim();
+        if (valorCedula === cedula) return nombre;
+      }
+      return null;
+    }
+
+    async function verificarYGenerar() {
+      const curso = document.getElementById('curso').value;
+      const cedula = document.getElementById('cedula').value;
+      if (!curso || !cedula) return alert('Selecciona un curso y escribe tu cédula.');
+
+      const config = cursos[curso];
+      const nombre = await buscarNombre(cedula, config.gid);
+      if (!nombre) return alert('❌ No se encontró la cédula en el curso seleccionado.');
+
+      generarCertificado(nombre, config);
+    }
+
+    function generarCertificado(nombre, config) {
+      const fecha = new Date();
+      const dia = fecha.getDate();
+      const mes = fecha.toLocaleString('default', { month: 'long' });
+
+      const canvas = document.getElementById('certCanvas');
+      const ctx = canvas.getContext('2d');
+
+      const fondo = new Image();
+      fondo.src = `../IMG/certificados/${config.plantilla}`;
+      fondo.onload = function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(fondo, 0, 0, canvas.width, canvas.height);
+
+        // Nombre
+        ctx.fillStyle = '#000000';
+        ctx.font = `bold ${config.fontSizeNombre || 45}px Arial`;
+        ctx.textAlign = 'center';
+        ctx.fillText(nombre.toUpperCase(), config.xNombre, config.yNombre);
+
+        // Día
+        ctx.font = '26px Arial';
+        ctx.textAlign = 'left';
+        ctx.fillText(dia, config.xDia, config.yDia);
+
+        // Mes
+        ctx.fillText(mes, config.xMes, config.yMes);
+
+        // Descargar
+        const link = document.createElement('a');
+        link.download = `certificado_${nombre}.jpg`;
+        link.href = canvas.toDataURL('image/jpeg', 1.0);
+        link.click();
+      };
+    }
+
+  </script>
+
+
+
+  <script src="../JS/global.js"></script>
+</body>
+
+</html>
