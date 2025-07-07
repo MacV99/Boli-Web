@@ -85,31 +85,52 @@
     const cursos = {
       "globos-rentables": {
         gid: "0",
-        plantilla: "globos-rentables.jpg",
+        plantillaAsistencia: "globos-rentables-asistencia.jpg",
+        plantillaCompetencia: "globos-rentables-competencia.jpg",
+        columnas: {
+          nombre: "nombre",
+          cedula: "cedula",
+          año: "año",
+          mes: "mes",
+          competencia: "competencia"
+        },
         xNombre: 457,
         yNombre: 235,
         fontSizeNombre: 45,
-        xDia: 348,
-        yDia: 785,
-        xMes: 650,
-        yMes: 785
+        xAño: 408,
+        yAño: 781,
+        xMes: 645,
+        yMes: 781
       },
       "cero-cien": {
         gid: "1773016849",
         plantilla: "cero-cien.jpg",
+        columnas: {
+          nombre: "nombre",
+          cedula: "cedula",
+          ciudad: "ciudad",
+          año: "año",
+          mes: "mes"
+        },
         xNombre: 637,
         yNombre: 335,
         fontSizeNombre: 45,
-        xDia: 520,
-        yDia: 690,
-        xMes: 810,
-        yMes: 690
+        xCiudad: 547,
+        yCiudad: 702,
+        xAño: 745,
+        yAño: 702,
+        xMes: 935,
+        yMes: 702,
+        // Rutas de los PDFs de obsequio:
+        obsequioPdfs: [                                       // <<<—
+          "../public/pdf/DIA 1.pdf",                            // <<<—
+          "../public/pdf/DIA 2.pdf"                             // <<<—
+        ]                                                     // <<<—
       }
     };
 
-
-    async function buscarNombre(cedula, gid) {
-      const url = `https://docs.google.com/spreadsheets/d/e/2PACX-1vQH0gNaC2Gh8m9c0CjrwOm7zAz7hruvLBKpuZGq87cAC_UK_7lP8GjbJpqF3qir93rlxzTrCQ9oNgYh/pubhtml?gid=${gid}&single=true`;
+    async function buscarDatos(cedula, cursoConfig) {
+      const url = `https://docs.google.com/spreadsheets/d/e/2PACX-1vQH0gNaC2Gh8m9c0CjrwOm7zAz7hruvLBKpuZGq87cAC_UK_7lP8GjbJpqF3qir93rlxzTrCQ9oNgYh/pubhtml?gid=${cursoConfig.gid}&single=true`;
       const res = await fetch(url);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const html = await res.text();
@@ -118,17 +139,26 @@
       const rows = Array.from(doc.querySelectorAll('.waffle tbody tr'));
       if (rows.length < 2) return null;
 
-      const headers = Array.from(rows[0].querySelectorAll('td')).map(td => td.textContent.trim().toLowerCase());
-      const idxCedula = headers.indexOf('cedula');
-      const idxNombre = headers.indexOf('nombre');
+      const headers = Array.from(rows[0].querySelectorAll('td'))
+        .map(td => td.textContent.trim().toLowerCase());
+      const indices = {};
+      for (let key in cursoConfig.columnas) {
+        indices[key] = headers.indexOf(cursoConfig.columnas[key]);
+      }
+
       const dataRows = rows.slice(1);
       cedula = cedula.trim().toLowerCase();
 
       for (let row of dataRows) {
         const cells = row.querySelectorAll('td');
-        const valorCedula = cells[idxCedula]?.textContent.trim().toLowerCase();
-        const nombre = cells[idxNombre]?.textContent.trim();
-        if (valorCedula === cedula) return nombre;
+        const valorCedula = cells[indices.cedula]?.textContent.trim().toLowerCase();
+        if (valorCedula === cedula) {
+          const datos = {};
+          for (let key in indices) {
+            datos[key] = cells[indices[key]]?.textContent.trim();
+          }
+          return datos;
+        }
       }
       return null;
     }
@@ -139,48 +169,65 @@
       if (!curso || !cedula) return alert('Selecciona un curso y escribe tu cédula.');
 
       const config = cursos[curso];
-      const nombre = await buscarNombre(cedula, config.gid);
-      if (!nombre) return alert('❌ No se encontró la cédula en el curso seleccionado.');
+      const datos = await buscarDatos(cedula, config);
+      if (!datos) return alert('❌ No se encontró la cédula en el curso seleccionado.');
 
-      generarCertificado(nombre, config);
+      if (config.plantillaAsistencia) {
+        // Curso globos-rentables
+        generarCertificado(datos, { ...config, plantilla: config.plantillaAsistencia });
+        if (datos.competencia?.trim().toLowerCase() === 'si') {
+          generarCertificado(datos, { ...config, plantilla: config.plantillaCompetencia });
+        }
+      } else {
+        // Curso cero-cien
+        generarCertificado(datos, config);
+        // Además, descarga los PDFs de obsequio:
+        if (config.obsequioPdfs) {                             // <<<—
+          config.obsequioPdfs.forEach(path => {                 // <<<—
+            const link = document.createElement('a');           // <<<—
+            link.href = path;                                   // <<<—
+            // Extraemos el nombre del archivo para el download attribute
+            link.download = path.split('/').pop();              // <<<—
+            document.body.appendChild(link);                   // <<<—
+            link.click();                                       // <<<—
+            document.body.removeChild(link);                   // <<<—
+          });                                                   // <<<—
+        }                                                       // <<<—
+      }
     }
 
-    function generarCertificado(nombre, config) {
-      const fecha = new Date();
-      const dia = fecha.getDate();
-      const mes = fecha.toLocaleString('default', { month: 'long' });
-
+    function generarCertificado(datos, config) {
       const canvas = document.getElementById('certCanvas');
       const ctx = canvas.getContext('2d');
-
       const fondo = new Image();
       fondo.src = `../IMG/certificados/${config.plantilla}`;
       fondo.onload = function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(fondo, 0, 0, canvas.width, canvas.height);
 
-        // Nombre
-        ctx.fillStyle = '#000000';
-        ctx.font = `bold ${config.fontSizeNombre || 45}px Arial`;
+        ctx.fillStyle = '#000';
         ctx.textAlign = 'center';
-        ctx.fillText(nombre.toUpperCase(), config.xNombre, config.yNombre);
 
-        // Día
-        ctx.font = '26px Arial';
+        ctx.font = `bold ${config.fontSizeNombre || 42}px Arial`;
+        ctx.fillText(datos.nombre.toUpperCase(), config.xNombre, config.yNombre);
+
+        if (config.xCiudad && config.yCiudad && datos.ciudad) {
+          ctx.font = '14px Arial';
+          ctx.fillText(datos.ciudad.toUpperCase(), config.xCiudad, config.yCiudad);
+        }
+
+        ctx.font = '15px Arial';
         ctx.textAlign = 'left';
-        ctx.fillText(dia, config.xDia, config.yDia);
+        ctx.fillText(datos.año, config.xAño, config.yAño);
+        ctx.fillText(datos.mes.toUpperCase(), config.xMes, config.yMes);
 
-        // Mes
-        ctx.fillText(mes, config.xMes, config.yMes);
-
-        // Descargar
         const link = document.createElement('a');
-        link.download = `certificado_${nombre}.jpg`;
+        const tipo = config.plantilla.includes('competencia') ? 'competencia' : 'participacion';
+        link.download = `certificado_${tipo}_${datos.nombre}.jpg`;
         link.href = canvas.toDataURL('image/jpeg', 1.0);
         link.click();
       };
     }
-
   </script>
 
 
