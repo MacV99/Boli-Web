@@ -175,26 +175,37 @@
       if (config.plantillaAsistencia) {
         // Curso globos-rentables
         generarCertificado(datos, { ...config, plantilla: config.plantillaAsistencia });
+
         if (datos.competencia?.trim().toLowerCase() === 'si') {
-          generarCertificado(datos, { ...config, plantilla: config.plantillaCompetencia });
+          setTimeout(() => {
+            generarCertificado(datos, { ...config, plantilla: config.plantillaCompetencia });
+          }, 1000); // breve pausa para asegurar orden
         }
+
       } else {
         // Curso cero-cien
         generarCertificado(datos, config);
-        // Además, descarga los PDFs de obsequio:
-        if (config.obsequioPdfs) {                             // <<<—
-          config.obsequioPdfs.forEach(path => {                 // <<<—
-            const link = document.createElement('a');           // <<<—
-            link.href = path;                                   // <<<—
-            // Extraemos el nombre del archivo para el download attribute
-            link.download = path.split('/').pop();              // <<<—
-            document.body.appendChild(link);                   // <<<—
-            link.click();                                       // <<<—
-            document.body.removeChild(link);                   // <<<—
-          });                                                   // <<<—
-        }                                                       // <<<—
+
+        // Esperar 1 segundo y luego intentar descargar los PDFs
+        if (config.obsequioPdfs) {
+          setTimeout(() => {
+            config.obsequioPdfs.forEach(path => {
+              try {
+                const link = document.createElement('a');
+                link.href = path;
+                link.download = path.split('/').pop();
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              } catch (error) {
+                console.warn("No se pudo descargar un archivo adicional:", error);
+              }
+            });
+          }, 1000); // esto ayuda a que el primero se descargue sin interferencia
+        }
       }
     }
+
 
     function generarCertificado(datos, config) {
       const canvas = document.getElementById('certCanvas');
