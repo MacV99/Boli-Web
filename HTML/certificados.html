@@ -84,7 +84,7 @@
   <script>
     const cursos = {
       "globos-rentables": {
-        gid: "0",
+        url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH0gNaC2Gh8m9c0CjrwOm7zAz7hruvLBKpuZGq87cAC_UK_7lP8GjbJpqF3qir93rlxzTrCQ9oNgYh/pub?gid=0&single=true&output=csv", // <-- reemplaza aquí
         plantillaAsistencia: "globos-rentables-asistencia.jpg",
         plantillaCompetencia: "globos-rentables-competencia.jpg",
         columnas: {
@@ -103,7 +103,7 @@
         yMes: 781
       },
       "cero-cien": {
-        gid: "1773016849",
+        url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH0gNaC2Gh8m9c0CjrwOm7zAz7hruvLBKpuZGq87cAC_UK_7lP8GjbJpqF3qir93rlxzTrCQ9oNgYh/pub?gid=1773016849&single=true&output=csv", // <-- reemplaza aquí
         plantilla: "cero-cien.jpg",
         columnas: {
           nombre: "nombre",
@@ -121,45 +121,41 @@
         yAño: 702,
         xMes: 935,
         yMes: 702,
-        // Rutas de los PDFs de obsequio:
-        obsequioPdfs: [                                       // <<<—
-          "../public/pdf/DIA 1.pdf",                            // <<<—
-          "../public/pdf/DIA 2.pdf"                             // <<<—
-        ]                                                     // <<<—
+        obsequioPdfs: [
+          "../public/pdf/DIA 1.pdf",
+          "../public/pdf/DIA 2.pdf"
+        ]
       }
     };
 
     async function buscarDatos(cedula, cursoConfig) {
-      const url = `https://docs.google.com/spreadsheets/d/e/2PACX-1vQH0gNaC2Gh8m9c0CjrwOm7zAz7hruvLBKpuZGq87cAC_UK_7lP8GjbJpqF3qir93rlxzTrCQ9oNgYh/pubhtml?gid=${cursoConfig.gid}&single=true`;
-      const res = await fetch(url);
+      const url = `${cursoConfig.url}&rand=${Date.now()}`;
+      const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const html = await res.text();
-      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const csv = await res.text();
 
-      const rows = Array.from(doc.querySelectorAll('.waffle tbody tr'));
-      if (rows.length < 2) return null;
+      const lines = csv.trim().split('\n');
+      const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
 
-      const headers = Array.from(rows[0].querySelectorAll('td'))
-        .map(td => td.textContent.trim().toLowerCase());
       const indices = {};
       for (let key in cursoConfig.columnas) {
         indices[key] = headers.indexOf(cursoConfig.columnas[key]);
       }
 
-      const dataRows = rows.slice(1);
-      cedula = cedula.trim().toLowerCase();
+      const cedulaBuscada = cedula.trim().toLowerCase();
 
-      for (let row of dataRows) {
-        const cells = row.querySelectorAll('td');
-        const valorCedula = cells[indices.cedula]?.textContent.trim().toLowerCase();
-        if (valorCedula === cedula) {
+      for (let i = 1; i < lines.length; i++) {
+        const row = lines[i].split(',').map(c => c.trim().replace(/^"|"$/g, ''));
+        const valorCedula = row[indices.cedula]?.toLowerCase();
+        if (valorCedula === cedulaBuscada) {
           const datos = {};
           for (let key in indices) {
-            datos[key] = cells[indices[key]]?.textContent.trim();
+            datos[key] = row[indices[key]] || "";
           }
           return datos;
         }
       }
+
       return null;
     }
 
@@ -179,14 +175,13 @@
         if (datos.competencia?.trim().toLowerCase() === 'si') {
           setTimeout(() => {
             generarCertificado(datos, { ...config, plantilla: config.plantillaCompetencia });
-          }, 1000); // breve pausa para asegurar orden
+          }, 1000);
         }
 
       } else {
         // Curso cero-cien
         generarCertificado(datos, config);
 
-        // Esperar 1 segundo y luego intentar descargar los PDFs
         if (config.obsequioPdfs) {
           setTimeout(() => {
             config.obsequioPdfs.forEach(path => {
@@ -201,11 +196,10 @@
                 console.warn("No se pudo descargar un archivo adicional:", error);
               }
             });
-          }, 1000); // esto ayuda a que el primero se descargue sin interferencia
+          }, 1000);
         }
       }
     }
-
 
     function generarCertificado(datos, config) {
       const canvas = document.getElementById('certCanvas');
@@ -218,7 +212,6 @@
 
         ctx.fillStyle = '#000';
         ctx.textAlign = 'center';
-
         ctx.font = `bold ${config.fontSizeNombre || 42}px Arial`;
         ctx.fillText(datos.nombre.toUpperCase(), config.xNombre, config.yNombre);
 
@@ -240,6 +233,7 @@
       };
     }
   </script>
+
 
 
 
