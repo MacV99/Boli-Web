@@ -187,6 +187,11 @@ footer {
   padding: 45px 10%;
 }
 
+section>*,
+footer>* {
+  max-width: 1200px;
+}
+
 
 /* FLEX ROW Y FLEX COLUMN */
 .flex-column,
